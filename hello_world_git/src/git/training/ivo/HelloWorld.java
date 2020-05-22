@@ -1,9 +1,8 @@
 package git.training.ivo;
 
 /**
- * @author Nikolay Gavrailov
- * @since 22.05.2020
- *
+ * @author Nikolay.Gavrailov
+ * @since 23.05.2020 ã.
  */
 public class HelloWorld {
 
