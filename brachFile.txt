@@ -2,5 +2,6 @@ File from new branch
 
 
 
-ups, conflict on line 2
+
+no more conflicts
 
