@@ -1,0 +1,3 @@
+Just some text
+
+That's my edit with vi command
