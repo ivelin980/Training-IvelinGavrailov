@@ -1,0 +1,3 @@
+Just some text, nothing special
+
+An edit with vi command
