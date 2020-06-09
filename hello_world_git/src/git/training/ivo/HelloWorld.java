@@ -7,6 +7,6 @@ package git.training.ivo;
 public class HelloWorld {
 
 	public static void main(String[] args) {
-		// TODO: Print "Hello world in console"
+		System.out.println("Hello world!");
 	}
 }
