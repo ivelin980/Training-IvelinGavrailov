@@ -7,8 +7,6 @@ package git.training.ivo;
 public class HelloWorld {
 
 	public static void main(String[] args) {
-		System.out.println("This is conflict!");
-		
-		System.out.println("This is fine");
+		System.out.println("This is conflict in the pull request!");
 	}
 }
