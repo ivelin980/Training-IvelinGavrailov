@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class BackIn30Minutes {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner scan = new Scanner(System.in);
 		int hours = Integer.parseInt(scan.nextLine());
 		int minutes = Integer.parseInt(scan.nextLine());
