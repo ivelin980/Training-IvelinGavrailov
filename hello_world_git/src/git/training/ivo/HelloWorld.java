@@ -2,11 +2,11 @@ package git.training.ivo;
 
 /**
  * @author Nikolay.Gavrailov
- * @since 23.05.2020 ã.
+ * @since 23.05.2020 Ã£.
  */
 public class HelloWorld {
 
 	public static void main(String[] args) {
-		System.out.println("Hello conflict!");
+		System.out.println("Hello world!");
 	}
 }
