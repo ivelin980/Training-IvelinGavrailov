@@ -1,7 +1,12 @@
-package javaFundamentals_basicSyntax;
+package jv.fundamentals.basics.lab;
 
 import java.util.Scanner;
 
+/**
+ * @author Ivelin Gavrailov 10.06.2020
+ * 
+ *
+ */
 public class BackIn30Minutes {
 
 	public static void main(String[] args) {

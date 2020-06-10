@@ -1,4 +1,4 @@
-package javaFundamentals_basicSyntax;
+package jv.fundamentals.basics.lab;
 
 public class DivisibleBy3 {
 

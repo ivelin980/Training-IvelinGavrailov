@@ -1,4 +1,4 @@
-package javaFundamentals_basicSyntax;
+package jv.fundamentals.basics.lab;
 
 import java.util.Scanner;
 
@@ -11,10 +11,8 @@ public class EvenNumber {
 			System.out.println("Please write an even number.");
 			input = Integer.parseInt(scan.nextLine());
 		}
-		if (input % 2 == 0) {
-			input = Math.abs(input);
-			System.out.println(String.format("The number is: %d", input));
-		}
+		input = Math.abs(input);
+		System.out.println(String.format("The number is: %d", input));
 		scan.close();
 	}
 }

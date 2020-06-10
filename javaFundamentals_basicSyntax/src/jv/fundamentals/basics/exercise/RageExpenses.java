@@ -1,4 +1,4 @@
-package javaFundamentals_basics_exercise;
+package jv.fundamentals.basics.exercise;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package javaFundamentals_basicSyntax;
+package jv.fundamentals.basics.lab;
 
 import java.util.Scanner;
 

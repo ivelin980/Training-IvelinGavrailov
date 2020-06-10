@@ -1,4 +1,4 @@
-package javaFundamentals_basics_exercise;
+package jv.fundamentals.basics.exercise;
 
 import java.util.Scanner;
 
@@ -9,9 +9,9 @@ public class VendingMachine {
 		String input = "";
 		double money = 0.0;
 		double sum = 0.0;
-		while (!input.equals("Start")) {
+		while (!input.toLowerCase().equals("start")) {
 			input = scan.nextLine();
-			switch (input) {
+			switch (input.toLowerCase()) {
 			case "0.1":
 			case "0.2":
 			case "0.5":
@@ -20,17 +20,17 @@ public class VendingMachine {
 				money = Double.parseDouble(input);
 				sum += money;
 				break;
-			case "Start":
+			case "start":
 				break;
 			default:
 				money = Double.parseDouble(input);
 				System.out.println(String.format("Cannot accept %.2f", money));
 			}
 		}
-		while (!input.equals("End")) {
+		while (!input.toLowerCase().equals("end")) {
 			input = scan.nextLine();
-			switch (input) {
-			case "Nuts":
+			switch (input.toLowerCase()) {
+			case "nuts":
 				sum -= 2.00;
 				if (sum >= 0) {
 					System.out.println(String.format("Purchased %s", input));
@@ -39,7 +39,7 @@ public class VendingMachine {
 					sum += 2.00;
 				}
 				break;
-			case "Water":
+			case "water":
 				sum -= 0.70;
 				if (sum >= 0) {
 					System.out.println(String.format("Purchased %s", input));
@@ -48,7 +48,7 @@ public class VendingMachine {
 					sum += 0.70;
 				}
 				break;
-			case "Crisps":
+			case "crisps":
 				sum -= 1.50;
 				if (sum >= 0) {
 					System.out.println(String.format("Purchased %s", input));
@@ -57,7 +57,7 @@ public class VendingMachine {
 					sum += 1.50;
 				}
 				break;
-			case "Soda":
+			case "soda":
 				sum -= 0.8;
 				if (sum >= 0) {
 					System.out.println(String.format("Purchased %s", input));
@@ -66,7 +66,7 @@ public class VendingMachine {
 					sum += 0.8;
 				}
 				break;
-			case "Coke":
+			case "coke":
 				sum -= 1.00;
 				if (sum >= 0) {
 					System.out.println(String.format("Purchased %s", input));
@@ -75,7 +75,7 @@ public class VendingMachine {
 					sum += 1.00;
 				}
 				break;
-			case "End":
+			case "end":
 				break;
 			default:
 				System.out.println(String.format("Invalid product", input));
