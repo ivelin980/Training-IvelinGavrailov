@@ -1,4 +1,4 @@
-package javaFundamentals_basicSyntax;
+package jv.fundamentals.basics.lab;
 
 import java.util.Scanner;
 
@@ -11,5 +11,4 @@ public class StudentInformation {
 		System.out.print(String.format("Name: %s, Age: %d, Grade: %.2f", name, age, grade));
 		scan.close();
 	}
-
 }
