@@ -12,6 +12,7 @@ public class MultiplicationTable {
 			mult = i * input;
 			System.out.println(String.format("%d X %d = %d", input, i, mult));
 		}
+		scan.close();
 	}
 
 }

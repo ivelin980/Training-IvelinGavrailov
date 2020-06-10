@@ -18,6 +18,7 @@ public class Ages {
 		} else if (input >= 66) {
 			System.out.println("elder");
 		}
+		scan.close();
 	}
 
 }

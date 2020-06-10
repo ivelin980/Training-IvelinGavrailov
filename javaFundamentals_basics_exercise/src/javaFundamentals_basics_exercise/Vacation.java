@@ -63,6 +63,6 @@ public class Vacation {
 			totalPrice = totalPrice * 0.95;
 		}
 		System.out.print(String.format("Total price: %.2f", totalPrice));
+		scan.close();
 	}
-
 }

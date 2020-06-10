@@ -22,6 +22,7 @@ public class BackIn30Minutes {
 		} else {
 			System.out.print(String.format("%d:%d", hours, minutes));
 		}
+		scan.close();
 	}
 
 }

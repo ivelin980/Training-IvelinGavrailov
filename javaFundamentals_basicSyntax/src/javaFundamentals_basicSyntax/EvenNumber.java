@@ -15,5 +15,6 @@ public class EvenNumber {
 			input = Math.abs(input);
 			System.out.println(String.format("The number is: %d", input));
 		}
+		scan.close();
 	}
 }

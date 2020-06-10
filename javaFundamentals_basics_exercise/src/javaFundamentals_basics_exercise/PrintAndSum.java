@@ -14,7 +14,7 @@ public class PrintAndSum {
 			sum += i;
 		}
 		System.out.print(String.format("%nSum: %d", sum));
-
+		scan.close();
 	}
 
 }

@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class MonthPrinter {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner scan = new Scanner(System.in);
 		int input = Integer.parseInt(scan.nextLine());
 		switch (input) {
@@ -49,6 +48,7 @@ public class MonthPrinter {
 			System.out.println("Error!");
 			break;
 		}
+		scan.close();
 	}
 
 }

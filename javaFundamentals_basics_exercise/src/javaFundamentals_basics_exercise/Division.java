@@ -24,6 +24,7 @@ public class Division {
 		} else {
 			System.out.println("Not divisible");
 		}
+		scan.close();
 	}
 
 }

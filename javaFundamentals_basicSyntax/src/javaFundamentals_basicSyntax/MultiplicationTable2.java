@@ -15,6 +15,7 @@ public class MultiplicationTable2 {
 		} else {
 			System.out.println(String.format("%d X %d = %d", input, mult, input * mult));
 		}
+		scan.close();
 	}
 
 }

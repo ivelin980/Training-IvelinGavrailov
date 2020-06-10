@@ -13,6 +13,7 @@ public class TriangleOfNumbers {
 			}
 			System.out.println();
 		}
+		scan.close();
 	}
 
 }

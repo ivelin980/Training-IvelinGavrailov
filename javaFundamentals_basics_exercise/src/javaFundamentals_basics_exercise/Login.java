@@ -27,5 +27,6 @@ public class Login {
 				System.out.println(String.format("User %s logged in.", username));
 			}
 		}
+		scan.close();
 	}
 }

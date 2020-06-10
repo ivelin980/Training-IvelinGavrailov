@@ -51,6 +51,7 @@ public class TheatrePromotions {
 		} else {
 			System.out.print(String.format("%d$", price));
 		}
+		scan.close();
 	}
 
 }

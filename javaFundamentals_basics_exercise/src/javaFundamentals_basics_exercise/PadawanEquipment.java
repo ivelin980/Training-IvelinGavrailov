@@ -20,6 +20,7 @@ public class PadawanEquipment {
 		} else {
 			System.out.println(String.format("Ivan Cho will need %.2flv more.", totalPrice - budget));
 		}
+		scan.close();
 	}
 
 }

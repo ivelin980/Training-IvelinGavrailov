@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class ForeignLanguages {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner scan = new Scanner(System.in);
 		String country = scan.nextLine();
 		switch (country) {
@@ -22,6 +21,6 @@ public class ForeignLanguages {
 			System.out.println("unknown");
 			break;
 		}
-
+		scan.close();
 	}
 }

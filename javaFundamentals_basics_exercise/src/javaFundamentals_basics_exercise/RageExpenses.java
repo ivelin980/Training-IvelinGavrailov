@@ -18,6 +18,7 @@ public class RageExpenses {
 		double expenses = trashedHeadset * headsetPrice + trashedKeyboard * keyboardPrice + trashedMouse * mousePrice
 				+ trashedDisplay * displayPrice;
 		System.out.println(String.format("Rage expenses: %.2f lv.", expenses));
+		scan.close();
 	}
 
 }

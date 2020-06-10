@@ -82,5 +82,6 @@ public class VendingMachine {
 			}
 		}
 		System.out.println(String.format("Change: %.2f", sum));
+		scan.close();
 	}
 }
