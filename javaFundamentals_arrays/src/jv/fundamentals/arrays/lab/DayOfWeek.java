@@ -14,8 +14,7 @@ public class DayOfWeek {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		String[] dayNames = new String[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",
-				"Sunday" };
+		String[] dayNames = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
 		int input = Integer.parseInt(scan.nextLine());
 		if (input >= 1 && input <= 7) {
 			System.out.println(dayNames[input - 1]);

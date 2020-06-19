@@ -19,8 +19,6 @@ public class EqualSums {
 		Scanner scan = new Scanner(System.in);
 		String[] input = scan.nextLine().split(" ");
 		int[] numbers = new int[input.length];
-		int index = 0;
-		boolean isEqual = false;
 		for (int i = 0; i < numbers.length; i++) {
 			numbers[i] = Integer.parseInt(input[i]);
 		}
@@ -34,16 +32,11 @@ public class EqualSums {
 				leftSum += numbers[j];
 			}
 			if (leftSum == rightSum) {
-				isEqual = true;
-				index = i;
-				break;
+				System.out.println(i);
+				return;
 			}
 		}
-		if (isEqual) {
-			System.out.println(index);
-		} else {
-			System.out.println("no");
-		}
+		System.out.println("no");
 		scan.close();
 	}
 }

@@ -25,8 +25,7 @@ public class Train {
 		for (int i = 0; i < train.length; i++) {
 			System.out.print(train[i] + " ");
 		}
-		System.out.println();
-		System.out.println(peopleInTheTrain);
+		System.out.println("\n" +peopleInTheTrain);
 		scan.close();
 	}
 }
