@@ -20,12 +20,12 @@ public class MultiplyEvensByOdds {
 	}
 
 	private static int multiplyEvensByOdds(int number) {
-		int evenSum = sumOfEvens(number);
-		int oddSum = sumOfOdds(number);
+		int evenSum = getSumOfEvens(number);
+		int oddSum = getSumOfOdds(number);
 		return evenSum * oddSum;
 	}
 
-	private static int sumOfEvens(int number) {
+	private static int getSumOfEvens(int number) {
 		int sum = 0;
 		while (Math.abs(number) > 0) {
 			int digit = number % 10;
@@ -37,7 +37,7 @@ public class MultiplyEvensByOdds {
 		return sum;
 	}
 
-	private static int sumOfOdds(int number) {
+	private static int getSumOfOdds(int number) {
 		int sum = 0;
 		while (Math.abs(number) > 0) {
 			int digit = number % 10;

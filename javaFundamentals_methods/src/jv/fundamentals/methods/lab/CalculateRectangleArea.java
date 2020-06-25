@@ -17,11 +17,11 @@ public class CalculateRectangleArea {
 		Scanner scan = new Scanner(System.in);
 		double width = Double.parseDouble(scan.nextLine());
 		double length = Double.parseDouble(scan.nextLine());
-		System.out.println(new DecimalFormat("0.##").format(rectangleArea(width, length)));
+		System.out.println(new DecimalFormat("0.##").format(getRectangleArea(width, length)));
 		scan.close();
 	}
 
-	private static double rectangleArea(double width, double length) {
+	private static double getRectangleArea(double width, double length) {
 		return width * length;
 	}
 }

@@ -14,11 +14,11 @@ public class SignOfInteger {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int number = Integer.parseInt(scan.nextLine());
-		signOfInteger(number);
+		printSignOfInteger(number);
 		scan.close();
 	}
 
-	private static void signOfInteger(int number) {
+	private static void printSignOfInteger(int number) {
 		if (number > 0) {
 			System.out.print(String.format("The number %d is positive.", number));
 		} else if (number < 0) {

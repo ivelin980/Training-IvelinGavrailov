@@ -19,11 +19,11 @@ public class Orders {
 		Scanner scan = new Scanner(System.in);
 		String product = scan.nextLine();
 		int quantity = Integer.parseInt(scan.nextLine());
-		orderPrice(product, quantity);
+		printOrderPrice(product, quantity);
 		scan.close();
 	}
 
-	private static void orderPrice(String product, int quantity) {
+	private static void printOrderPrice(String product, int quantity) {
 		double price = 0;
 		switch (product.toLowerCase()) {
 		case "coffee":

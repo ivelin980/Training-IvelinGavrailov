@@ -16,12 +16,11 @@ public class RepeatString {
 		Scanner scan = new Scanner(System.in);
 		String input = scan.nextLine();
 		int n = Integer.parseInt(scan.nextLine());
-		String result = (stringMultiplier(input, n));
-		System.out.println(result);
+		System.out.println(multiplyString(input, n));
 		scan.close();
 	}
 
-	private static String stringMultiplier(String input, int timesToMultiply) {
+	private static String multiplyString(String input, int timesToMultiply) {
 		String result = "";
 		for (int i = 0; i < timesToMultiply; i++) {
 			result += input;

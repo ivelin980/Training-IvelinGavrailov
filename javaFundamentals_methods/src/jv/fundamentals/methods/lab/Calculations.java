@@ -21,34 +21,34 @@ public class Calculations {
 		int secondNumber = Integer.parseInt(scan.nextLine());
 		switch (command.toLowerCase()) {
 		case "add":
-			add(firstNumber, secondNumber);
+			System.out.println(add(firstNumber, secondNumber));
 			break;
 		case "divide":
-			divide(firstNumber, secondNumber);
+			System.out.println(divide(firstNumber, secondNumber));
 			break;
 		case "multiply":
-			multiply(firstNumber, secondNumber);
+			System.out.println(multiply(firstNumber, secondNumber));
 			break;
 		case "substract":
-			substract(firstNumber, secondNumber);
+			System.out.println(substract(firstNumber, secondNumber));
 			break;
 		}
 		scan.close();
 	}
 
-	private static void add(int firstNumber, int secondNumber) {
-		System.out.println(firstNumber + secondNumber);
+	private static int add(int firstNumber, int secondNumber) {
+		return firstNumber + secondNumber;
 	}
 
-	private static void divide(int firstNumber, int secondNumber) {
-		System.out.println(firstNumber / secondNumber);
+	private static int divide(int firstNumber, int secondNumber) {
+		return firstNumber / secondNumber;
 	}
 
-	private static void multiply(int firstNumber, int secondNumber) {
-		System.out.println(firstNumber * secondNumber);
+	private static int multiply(int firstNumber, int secondNumber) {
+		return firstNumber * secondNumber;
 	}
 
-	private static void substract(int firstNumber, int secondNumber) {
-		System.out.println(firstNumber - secondNumber);
+	private static int substract(int firstNumber, int secondNumber) {
+		return firstNumber - secondNumber;
 	}
 }

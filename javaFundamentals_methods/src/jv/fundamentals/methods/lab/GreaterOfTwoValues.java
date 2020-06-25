@@ -17,20 +17,23 @@ public class GreaterOfTwoValues {
 		Scanner scan = new Scanner(System.in);
 		String type = scan.nextLine();
 		switch (type.toLowerCase()) {
-		case "int":
-			int intInput = Integer.parseInt(scan.nextLine());
-			int secondIntInput = Integer.parseInt(scan.nextLine());
-			System.out.println(getMax(intInput, secondIntInput));
+		case "int": {
+			int input = Integer.parseInt(scan.nextLine());
+			int secondInput = Integer.parseInt(scan.nextLine());
+			System.out.println(getMax(input, secondInput));
+		}
 			break;
-		case "char":
-			char charInput = scan.nextLine().charAt(0);
-			char secondCharInput = scan.nextLine().charAt(0);
-			System.out.println(getMax(charInput, secondCharInput));
+		case "char": {
+			char input = scan.nextLine().charAt(0);
+			char secondInput = scan.nextLine().charAt(0);
+			System.out.println(getMax(input, secondInput));
+		}
 			break;
-		case "string":
-			String stringInput = scan.nextLine();
-			String secondStringInput = scan.nextLine();
-			System.out.println(getMax(stringInput, secondStringInput));
+		case "string": {
+			String input = scan.nextLine();
+			String secondInput = scan.nextLine();
+			System.out.println(getMax(input, secondInput));
+		}
 			break;
 		}
 		scan.close();
@@ -53,5 +56,4 @@ public class GreaterOfTwoValues {
 		}
 		return secondString;
 	}
-
 }
