@@ -17,12 +17,12 @@ public class FactorialDivision {
 		Scanner scan = new Scanner(System.in);
 		double firstNumber = Double.parseDouble(scan.nextLine());
 		double secondNumber = Double.parseDouble(scan.nextLine());
-		double result = division(firstNumber, secondNumber);
+		double result = divideDoublesMadeOfTheirFactorials(firstNumber, secondNumber);
 		System.out.println(String.format("%.2f", result));
 		scan.close();
 	}
 
-	private static double factorialOfNumber(double number) {
+	private static double getFactorialOfNumber(double number) {
 		double result = 1;
 		for (int i = 1; i <= number; i++) {
 			result *= i;
@@ -31,9 +31,9 @@ public class FactorialDivision {
 		return result;
 	}
 
-	private static double division(double number, double secondNumber) {
-		double factorialOfFirst = factorialOfNumber(number);
-		double factorialOfSecond = factorialOfNumber(secondNumber);
+	private static double divideDoublesMadeOfTheirFactorials(double number, double secondNumber) {
+		double factorialOfFirst = getFactorialOfNumber(number);
+		double factorialOfSecond = getFactorialOfNumber(secondNumber);
 		return factorialOfFirst / factorialOfSecond;
 
 	}

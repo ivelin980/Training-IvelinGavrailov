@@ -16,11 +16,11 @@ public class MiddleCharacters {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		String input = scan.nextLine();
-		middleCharacters(input);
+		printMiddleCharacter(input);
 		scan.close();
 	}
 
-	private static void middleCharacters(String input) {
+	private static void printMiddleCharacter(String input) {
 		int length = input.length();
 		System.out.print(input.charAt((length - 1) / 2));
 		if (length % 2 == 0) {

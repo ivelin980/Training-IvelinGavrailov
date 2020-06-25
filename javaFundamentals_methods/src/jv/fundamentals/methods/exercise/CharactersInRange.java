@@ -16,11 +16,11 @@ public class CharactersInRange {
 		Scanner scan = new Scanner(System.in);
 		char firstInput = scan.nextLine().charAt(0);
 		char secondInput = scan.nextLine().charAt(0);
-		RangeOfChars(firstInput, secondInput);
+		rangeOfChars(firstInput, secondInput);
 		scan.close();
 	}
 
-	private static void RangeOfChars(char firstInput, char secondInput) {
+	private static void rangeOfChars(char firstInput, char secondInput) {
 		for (int i = Math.min(firstInput,secondInput) + 1; i < Math.max(firstInput, secondInput); i++) {
 			System.out.print(String.format("%c ", i));
 		}

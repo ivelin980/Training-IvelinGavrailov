@@ -17,11 +17,11 @@ public class TopNumber {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int n = Integer.parseInt(scan.nextLine());
-		topNumber(n);
+		printTopNumbers(n);
 		scan.close();
 	}
 
-	private static void topNumber(int number) {
+	private static void printTopNumbers(int number) {
 		for (int i = 1; i <= number; i++) {
 			int temp = i;
 			int sumOfDigits = 0;
@@ -29,21 +29,21 @@ public class TopNumber {
 				sumOfDigits += temp % 10;
 				temp /= 10;
 			}
-			if (sumOfDigits % 8 == 0 && oddDigit(i)) {
+			if (sumOfDigits % 8 == 0 && isOddDigit(i)) {
 				System.out.println(i);
 			}
 		}
 	}
 
-	private static boolean oddDigit(int number) {
-		boolean oddDigit = false;
+	private static boolean isOddDigit(int number) {
+		boolean isOddDigit = false;
 		while (number > 0) {
 			int digit = number % 10;
 			if (digit % 2 != 0) {
-				oddDigit = true;
+				isOddDigit = true;
 			}
 			number /= 10;
 		}
-		return oddDigit;
+		return isOddDigit;
 	}
 }

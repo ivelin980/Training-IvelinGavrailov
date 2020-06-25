@@ -19,22 +19,19 @@ public class PasswordValidator {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		String password = scan.nextLine();
-		boolean validPass = passwordCorrect(password);
+		boolean validPass = isPasswordCorrect(password);
 		if (validPass) {
 			System.out.println("Password is valid");
 		}
 		scan.close();
 	}
 
-	private static boolean passwordCorrect(String password) {
-		boolean isEnough = passwordLength(password);
-		boolean onlyDigitsAndLetters = passwordCharacters(password);
-		boolean enoughDigits = passwordMinDigitsCount(password);
-		boolean isValid = isEnough && onlyDigitsAndLetters && enoughDigits;
-		return isValid;
+	private static boolean isPasswordCorrect(String password) {
+		return isPasswordLongEnough(password) & isPasswordWithValidCharacters(password)
+				& isPasswordWithEnoughDigits(password);
 	}
 
-	private static boolean passwordLength(String password) {
+	private static boolean isPasswordLongEnough(String password) {
 		if (password.length() < 6 || password.length() > 10) {
 			System.out.println("Password must be between 6 and 10 characters");
 			return false;
@@ -42,7 +39,7 @@ public class PasswordValidator {
 		return true;
 	}
 
-	private static boolean passwordCharacters(String password) {
+	private static boolean isPasswordWithValidCharacters(String password) {
 		password = password.toLowerCase();
 		for (int i = 0; i < password.length(); i++) {
 			if (password.charAt(i) < 48 || (password.charAt(i) > 57 && password.charAt(i) < 97)) {
@@ -53,7 +50,7 @@ public class PasswordValidator {
 		return true;
 	}
 
-	private static boolean passwordMinDigitsCount(String password) {
+	private static boolean isPasswordWithEnoughDigits(String password) {
 		int sumDigits = 0;
 		for (int i = 0; i < password.length(); i++) {
 			if (Character.isDigit(password.charAt(i))) {

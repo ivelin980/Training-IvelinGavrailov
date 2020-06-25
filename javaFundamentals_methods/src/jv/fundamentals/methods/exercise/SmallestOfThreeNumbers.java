@@ -17,17 +17,17 @@ public class SmallestOfThreeNumbers {
 		int firstNumber = Integer.parseInt(scan.nextLine());
 		int secondNumber = Integer.parseInt(scan.nextLine());
 		int thirdNumber = Integer.parseInt(scan.nextLine());
-		getSmallest(firstNumber, secondNumber, thirdNumber);
+		System.out.println(getSmallestIntegerOfThree(firstNumber, secondNumber, thirdNumber));
 		scan.close();
 	}
 
-	private static void getSmallest(int firstNumber, int secondNumber, int thirdNumber) {
+	private static int getSmallestIntegerOfThree(int firstNumber, int secondNumber, int thirdNumber) {
 		if (firstNumber < secondNumber && firstNumber < thirdNumber) {
-			System.out.println(firstNumber);
+			return firstNumber;
 		} else if (secondNumber < firstNumber && secondNumber < thirdNumber) {
-			System.out.println(secondNumber);
-		} else {
-			System.out.println(thirdNumber);
+			return secondNumber;
 		}
+		return thirdNumber;
+
 	}
 }

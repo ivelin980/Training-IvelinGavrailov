@@ -15,10 +15,10 @@ public class NxNMatrix {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int input = Integer.parseInt(scan.nextLine());
-		nXnMatrix(input);
+		printSquareOfNumber(input);
 		scan.close();
 	}
-	private static void nXnMatrix(int input) {
+	private static void printSquareOfNumber(int input) {
 		for (int i = 0; i < input; i++) {
 			for (int j = 0; j < input; j++) {
 				System.out.print(input+" ");

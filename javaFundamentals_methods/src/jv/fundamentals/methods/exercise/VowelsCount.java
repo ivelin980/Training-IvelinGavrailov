@@ -15,11 +15,11 @@ public class VowelsCount {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		String input = scan.nextLine();
-		getVowelsCount(input);
+		printVowelsCount(input);
 		scan.close();
 	}
 
-	private static void getVowelsCount(String input) {
+	private static void printVowelsCount(String input) {
 		int vowelsCount = 0;
 		for (int i = 0; i < input.length(); i++) {
 			switch (input.toLowerCase().charAt(i)) {

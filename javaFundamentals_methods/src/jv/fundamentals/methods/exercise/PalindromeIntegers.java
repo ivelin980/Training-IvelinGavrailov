@@ -15,20 +15,21 @@ public class PalindromeIntegers {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		String input = scan.nextLine();
-		while (isNumber(input)) {
-			isPalindrome(Integer.parseInt(input));
+		while (!"end".equalsIgnoreCase(input)) {
+			if (isNumber(input)) {
+				isPalindrome(input);
+			}
 			input = scan.nextLine();
 		}
 		scan.close();
 	}
 
-	private static void isPalindrome(int number) {
-		String numberAsString = number + "";
+	private static void isPalindrome(String number) {
 		String reverseString = "";
-		for (int i = numberAsString.length() - 1; i >= 0; i--) {
-			reverseString += numberAsString.charAt(i);
+		for (int i = number.length() - 1; i >= 0; i--) {
+			reverseString += number.charAt(i);
 		}
-		if (reverseString.equals(numberAsString)) {
+		if (reverseString.equals(number)) {
 			System.out.println("true");
 		} else {
 			System.out.println("false");
