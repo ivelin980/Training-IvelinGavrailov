@@ -26,11 +26,11 @@ public class ListOperations {
 		for (String element : input) {
 			numbers.add(element);
 		}
-		listOperations(numbers, scan);
+		manipulateList(numbers, scan);
 		scan.close();
 	}
 
-	private static void listOperations(ArrayList<String> numbers, Scanner scan) {
+	private static void manipulateList(ArrayList<String> numbers, Scanner scan) {
 		while (true) {
 			String[] tokens = scan.nextLine().split("\\s+");
 			String command = tokens[0];

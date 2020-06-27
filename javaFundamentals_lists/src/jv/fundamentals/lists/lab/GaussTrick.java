@@ -20,20 +20,18 @@ public class GaussTrick {
 		for (String element : input) {
 			numbers.add(Integer.parseInt(element));
 		}
-		gaussTrick(numbers);
+		printListWithGaussTrick(numbers);
 		scan.close();
 
 	}
 
-	private static void gaussTrick(ArrayList<Integer> numbers) {
-		String output = "";
+	private static void printListWithGaussTrick(ArrayList<Integer> numbers) {
 		for (int i = 0; i < numbers.size() - 1; i++) {
 			numbers.set(i, numbers.get(i) + numbers.get(numbers.size() - 1));
 			numbers.remove(numbers.size() - 1);
 		}
 		for (Integer number : numbers) {
-			output += number + " ";
+			System.out.print(number+" ");
 		}
-		System.out.println(output);
 	}
 }

@@ -26,10 +26,11 @@ public class ListManipulationAdvanced {
 		for (String element : input) {
 			listNumbers.add(Integer.parseInt(element));
 		}
-		manipulatingList(listNumbers, scan);
+		manipulateList(listNumbers, scan);
+		scan.close();
 	}
 
-	private static void manipulatingList(ArrayList<Integer> list, Scanner scan) {
+	private static void manipulateList(ArrayList<Integer> list, Scanner scan) {
 		while (true) {
 			String[] tokens = scan.nextLine().split(" ");
 			if ("end".equals(tokens[0])) {

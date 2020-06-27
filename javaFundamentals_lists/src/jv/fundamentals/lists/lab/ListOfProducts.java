@@ -21,11 +21,11 @@ public class ListOfProducts {
 		for (int i = 0; i < n; i++) {
 			products.add(scan.nextLine());
 		}
-		numberedList(products);
+		sortAndPrintNumberedList(products);
 		scan.close();
 	}
 
-	private static void numberedList(ArrayList<String> list) {
+	private static void sortAndPrintNumberedList(ArrayList<String> list) {
 		int index = 1;
 		Collections.sort(list);
 		for (String element : list) {

@@ -24,33 +24,33 @@ public class ListManipulationBasics {
 		for (String element : array) {
 			list.add(element);
 		}
-		manipulatingList(list, scan);
+		manipulateList(list, scan);
 		scan.close();
 	}
 
-	private static void manipulatingList(ArrayList<String> list, Scanner scan) {
+	private static void manipulateList(ArrayList<String> list, Scanner scan) {
 		while (true) {
 			String[] manipulation = scan.nextLine().split(" ");
 			if (manipulation[0].equals("end")) {
 				break;
 			}
-			switch (manipulation[0]) {
-			case "Add": {
+			switch (manipulation[0].toLowerCase()) {
+			case "add": {
 				String element = manipulation[1];
 				list.add(element);
 			}
 				break;
-			case "Remove": {
+			case "remove": {
 				String element = manipulation[1];
 				list.remove(element);
 			}
 				break;
-			case "RemoveAt": {
+			case "removeat": {
 				int index = Integer.parseInt(manipulation[1]);
 				list.remove(index);
 			}
 				break;
-			case "Insert": {
+			case "insert": {
 				String element = manipulation[1];
 				int index = Integer.parseInt(manipulation[2]);
 				list.add(index, element);
@@ -60,10 +60,8 @@ public class ListManipulationBasics {
 				break;
 			}
 		}
-		String output = "";
 		for (String element : list) {
-			output += element + " ";
+			System.out.print(element + " ");
 		}
-		System.out.println(output);
 	}
 }
