@@ -26,39 +26,51 @@ public class BombNumbers {
 		String[] tokens = scan.nextLine().split("\\s+");
 		int specialNumber = Integer.parseInt(tokens[0]);
 		int power = Integer.parseInt(tokens[1]);
-		bombInList(numbers, specialNumber, power);
+		removeElementsAroundOne(numbers, specialNumber, power);
+		System.out.println(sumOfListElements(numbers));
 		scan.close();
 	}
 
-	private static void bombInList(ArrayList<Integer> list, int specialNumber, int power) {
-		int sum = 0;
-		while (list.contains(specialNumber)) {
-			int specialNumberIndex = list.indexOf(specialNumber);
-			if (list.size() - 1 - list.indexOf(specialNumber) > power) {
-				for (int i = list.indexOf(specialNumber) + 1; i <= list.indexOf(specialNumber) + power; i++) {
-					list.remove(i);
-				}
-			} else {
-				for (int j = list.size() - 1; j > list.indexOf(specialNumber); j--) {
-					list.remove(j);
-				}
-			}
-			if (specialNumberIndex - power > 0) {
+	private static void removeElementsAroundOne(ArrayList<Integer> list, int number, int range) {
+		while (list.contains(number)) {
+			removeElementsOnRight(list, number, range);
+			removeElementsOnLeft(list, number, range);
+			list.remove(list.indexOf(number));
+		}
+	}
 
-				for (int i = specialNumberIndex - 1; i >= specialNumberIndex - power; i--) {
-					list.remove(i);
-				}
-			} else {
-				for (int j = specialNumberIndex - 1; j >= 0; j--) {
-					list.remove(j);
-					specialNumberIndex--;
-				}
+	private static int sumOfListElements(ArrayList<Integer> list) {
+		int sum = 0;
+		for (Integer number : list) {
+			sum += number;
+		}
+		return sum;
+	}
+
+	private static void removeElementsOnRight(ArrayList<Integer> list, int number, int range) {
+		int numberIndex = list.indexOf(number);
+		int elementsOnRight = list.size() - 1 - list.indexOf(number);
+		if (elementsOnRight < range) {
+			for (int i = numberIndex + 1; i <= list.size() - 1; i++) {
+				list.remove(numberIndex + 1);
 			}
-			list.remove(list.indexOf(specialNumber));
+		} else {
+			for (int i = numberIndex + 1; i <= numberIndex + range; i++) {
+				list.remove(numberIndex + 1);
+			}
 		}
-		for (int i = 0; i < list.size(); i++) {
-			sum += list.get(i);
+	}
+
+	private static void removeElementsOnLeft(ArrayList<Integer> list, int number, int range) {
+		int numberIndex = list.indexOf(number);
+		if (numberIndex - range < 0) {
+			for (int i = numberIndex - 1; i >= 0; i--) {
+				list.remove(i);
+			}
+		} else {
+			for (int i = numberIndex - 1; i >= numberIndex - range; i--) {
+				list.remove(i);
+			}
 		}
-		System.out.println(sum);
 	}
 }

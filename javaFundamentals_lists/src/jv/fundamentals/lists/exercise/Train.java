@@ -27,11 +27,11 @@ public class Train {
 		for (String element : input) {
 			train.add(Integer.parseInt(element));
 		}
-		manipulatingTrainData(train, maxCapacity, scan);
+		manipulateTrainData(train, maxCapacity, scan);
 		scan.close();
 	}
 
-	private static void manipulatingTrainData(ArrayList<Integer> train, int capacity, Scanner scan) {
+	private static void manipulateTrainData(ArrayList<Integer> train, int capacity, Scanner scan) {
 		while (true) {
 			String[] tokens = scan.nextLine().split(" ");
 			if (tokens[0].equalsIgnoreCase("end")) {

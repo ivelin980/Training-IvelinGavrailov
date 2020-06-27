@@ -24,11 +24,11 @@ public class HouseParty {
 		Scanner scan = new Scanner(System.in);
 		int n = Integer.parseInt(scan.nextLine());
 		ArrayList<String> guestsOfParty = new ArrayList<>();
-		housePartyList(guestsOfParty, n, scan);
+		manipulateHousePartyList(guestsOfParty, n, scan);
 		scan.close();
 	}
 
-	private static void housePartyList(ArrayList<String> guestOfParty, int n, Scanner scan) {
+	private static void manipulateHousePartyList(ArrayList<String> guestOfParty, int n, Scanner scan) {
 		for (int i = 0; i < n; i++) {
 			String[] tokens = scan.nextLine().split("\\s+");
 			String name = tokens[0];

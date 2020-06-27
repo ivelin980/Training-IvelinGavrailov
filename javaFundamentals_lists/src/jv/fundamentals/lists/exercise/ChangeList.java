@@ -24,11 +24,11 @@ public class ChangeList {
 		for (String element : input) {
 			numberList.add(Integer.parseInt(element));
 		}
-		changeList(numberList, scan);
+		changeAndPrintList(numberList, scan);
 		scan.close();
 	}
 
-	private static void changeList(ArrayList<Integer> numberList, Scanner scan) {
+	private static void changeAndPrintList(ArrayList<Integer> numberList, Scanner scan) {
 		while (true) {
 			String[] tokens = scan.nextLine().split("\\s+");
 			if (tokens[0].equalsIgnoreCase("end")) {

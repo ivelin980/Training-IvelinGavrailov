@@ -35,11 +35,11 @@ public class CardsGame {
 		for (String element : secondInput) {
 			playerTwoCards.add(Integer.parseInt(element));
 		}
-		cardsGame(playerOneCards, playerTwoCards);
+		printWinnerInCardsGame(playerOneCards, playerTwoCards);
 		scan.close();
 	}
 
-	private static void cardsGame(ArrayList<Integer> playerOneCards, ArrayList<Integer> playerTwoCards) {
+	private static void printWinnerInCardsGame(ArrayList<Integer> playerOneCards, ArrayList<Integer> playerTwoCards) {
 		int index = 0;
 		int sum = 0;
 		while (!playerOneCards.isEmpty() && !playerTwoCards.isEmpty()) {
