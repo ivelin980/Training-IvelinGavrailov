@@ -5,6 +5,15 @@ import java.util.Scanner;
 
 import objects_and_classes.lab.entities.Student2;
 
+/**
+ * Use the class from the previous problem. If you receive a student which
+ * already exists (first name and last name should be unique) overwrite the
+ * information.
+ * 
+ * @author Ivelin Gavrailov
+ * @since 30.06.2020
+ *
+ */
 public class Students2Main {
 
 	public static void main(String[] args) {

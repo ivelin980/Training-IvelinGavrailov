@@ -5,6 +5,17 @@ import java.util.Scanner;
 
 import objects_and_classes.lab.entities.Student;
 
+/**
+ * Define a class Student, which holds the following information about students:
+ * first name, last name, age and hometown. Read list of students until you
+ * receive "end" command. After that, you will receive a city name. Print only
+ * students which are from the given city, in the following format: "{firstName}
+ * {lastName} is {age} years old.".
+ * 
+ * @author Ivelin Gavrailov
+ * @since 30.06.2020
+ *
+ */
 public class StudentsMain {
 
 	public static void main(String[] args) {
