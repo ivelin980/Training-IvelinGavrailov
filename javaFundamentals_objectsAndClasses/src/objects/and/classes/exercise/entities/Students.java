@@ -1,4 +1,4 @@
-package objects_and_classes.exercise.entities;
+package objects.and.classes.exercise.entities;
 
 public class Students {
 	private String firstName;

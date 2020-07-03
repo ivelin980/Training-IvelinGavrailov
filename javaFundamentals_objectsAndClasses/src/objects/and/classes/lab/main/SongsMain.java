@@ -1,9 +1,9 @@
-package objects_and_classes.lab.main;
+package objects.and.classes.lab.main;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import objects_and_classes.lab.entities.Song;
+import objects.and.classes.lab.entities.Song;
 
 /**
  * Define a class Song, which holds the following information about songs: Type

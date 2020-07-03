@@ -1,9 +1,9 @@
-package objects_and_classes.lab.main;
+package objects.and.classes.lab.main;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import objects_and_classes.lab.entities.Student;
+import objects.and.classes.lab.entities.Student;
 
 /**
  * Define a class Student, which holds the following information about students:

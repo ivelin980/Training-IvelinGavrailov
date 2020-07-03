@@ -1,8 +1,8 @@
-package objects_and_classes.exercise.main;
+package objects.and.classes.exercise.main;
 
 import java.util.Scanner;
 
-import objects_and_classes.exercise.entities.Article;
+import objects.and.classes.exercise.entities.Article;
 
 
 /**

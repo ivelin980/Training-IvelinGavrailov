@@ -1,4 +1,4 @@
-package objects_and_classes.lab.main;
+package objects.and.classes.lab.main;
 
 import java.util.Random;
 import java.util.Scanner;

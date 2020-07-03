@@ -1,9 +1,9 @@
-package objects_and_classes.exercise.main;
+package objects.and.classes.exercise.main;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import objects_and_classes.exercise.entities.PersonOrderByAge;
+import objects.and.classes.exercise.entities.PersonOrderByAge;
 
 /**
  * You will receive an unknown number of lines. On each line, you will receive

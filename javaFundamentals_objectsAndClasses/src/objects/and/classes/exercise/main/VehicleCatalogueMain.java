@@ -1,9 +1,9 @@
-package objects_and_classes.exercise.main;
+package objects.and.classes.exercise.main;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import objects_and_classes.exercise.entities.VehicleCatalogue;
+import objects.and.classes.exercise.entities.VehicleCatalogue;
 
 /**
  * You have to make a catalogue for vehicles. You will receive two types of

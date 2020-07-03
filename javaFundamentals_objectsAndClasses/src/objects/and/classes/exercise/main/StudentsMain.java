@@ -1,9 +1,9 @@
-package objects_and_classes.exercise.main;
+package objects.and.classes.exercise.main;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import objects_and_classes.exercise.entities.Students;
+import objects.and.classes.exercise.entities.Students;
 
 /**
  * Write a program that receives an n count of students and orders them by grade

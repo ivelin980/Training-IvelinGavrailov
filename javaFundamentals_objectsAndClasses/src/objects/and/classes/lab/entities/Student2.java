@@ -1,6 +1,7 @@
-package objects_and_classes.lab.entities;
+package objects.and.classes.lab.entities;
 
-public class Student {
+
+public class Student2 {
 	private String firstName;
 	private String lastName;
 	private String age;
@@ -37,9 +38,10 @@ public class Student {
 	public void setHometown(String hometown) {
 		this.hometown = hometown;
 	}
-
+	
 	@Override
 	public String toString() {
 		return String.format("%s %s is %s years old%n", this.firstName, this.lastName, this.age);
 	}
+
 }

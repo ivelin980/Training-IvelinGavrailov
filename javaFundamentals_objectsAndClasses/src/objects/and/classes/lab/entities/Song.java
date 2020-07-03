@@ -1,4 +1,4 @@
-package objects_and_classes.lab.entities;
+package objects.and.classes.lab.entities;
 
 public class Song {
 	private String typeList;

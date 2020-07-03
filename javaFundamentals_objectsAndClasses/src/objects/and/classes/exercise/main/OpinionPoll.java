@@ -1,9 +1,9 @@
-package objects_and_classes.exercise.main;
+package objects.and.classes.exercise.main;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import objects_and_classes.exercise.entities.PersonOpinionPoll;
+import objects.and.classes.exercise.entities.PersonOpinionPoll;
 
 /**
  * Using the Person class, write a program that reads from the console N lines

@@ -1,9 +1,9 @@
-package objects_and_classes.exercise.main;
+package objects.and.classes.exercise.main;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import objects_and_classes.exercise.entities.Article2;
+import objects.and.classes.exercise.entities.Article2;
 
 /**
  * Change the program, so you can store a list of articles. You will not need
