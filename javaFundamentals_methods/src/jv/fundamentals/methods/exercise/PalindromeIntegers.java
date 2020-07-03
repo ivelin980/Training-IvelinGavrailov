@@ -17,23 +17,19 @@ public class PalindromeIntegers {
 		String input = scan.nextLine();
 		while (!"end".equalsIgnoreCase(input)) {
 			if (isNumber(input)) {
-				isPalindrome(input);
+				System.out.println(isPalindrome(input));
 			}
 			input = scan.nextLine();
 		}
 		scan.close();
 	}
 
-	private static void isPalindrome(String number) {
+	private static boolean isPalindrome(String number) {
 		String reverseString = "";
 		for (int i = number.length() - 1; i >= 0; i--) {
 			reverseString += number.charAt(i);
 		}
-		if (reverseString.equals(number)) {
-			System.out.println("true");
-		} else {
-			System.out.println("false");
-		}
+		return reverseString.equals(number);
 	}
 
 	private static boolean isNumber(String input) {
