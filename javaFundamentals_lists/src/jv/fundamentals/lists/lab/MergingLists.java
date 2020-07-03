@@ -28,11 +28,13 @@ public class MergingLists {
 		for (String number : secondArr) {
 			secondList.add(number);
 		}
-		mergeLists(firstList, secondList);
+		for (String element : mergeLists(firstList, secondList)) {
+			System.out.print(element + " ");
+		}
 		scan.close();
 	}
 
-	private static void mergeLists(ArrayList<String> firstList, ArrayList<String> secondList) {
+	private static ArrayList<String> mergeLists(ArrayList<String> firstList, ArrayList<String> secondList) {
 		ArrayList<String> resultList = new ArrayList<>();
 		for (int i = 0; i < Math.min(firstList.size(), secondList.size()); i++) {
 			resultList.add(firstList.get(i));
@@ -46,8 +48,6 @@ public class MergingLists {
 				resultList.add(secondList.get(i));
 			}
 		}
-		for (String element : resultList) {
-			System.out.print(element + " ");
-		}
+		return resultList;
 	}
 }

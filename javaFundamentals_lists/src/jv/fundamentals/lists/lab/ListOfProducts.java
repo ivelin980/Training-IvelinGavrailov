@@ -26,11 +26,11 @@ public class ListOfProducts {
 	}
 
 	private static void sortAndPrintNumberedList(ArrayList<String> list) {
-		int index = 1;
+		int index = 0;
 		Collections.sort(list);
 		for (String element : list) {
-			System.out.print(String.format("%d.%s%n", index, element));
 			index++;
+			System.out.print(String.format("%d.%s%n", index, element));
 		}
 	}
 }

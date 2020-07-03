@@ -34,9 +34,9 @@ public class Train {
 	private static void manipulateTrainData(ArrayList<Integer> train, int capacity, Scanner scan) {
 		while (true) {
 			String[] tokens = scan.nextLine().split(" ");
-			if (tokens[0].equalsIgnoreCase("end")) {
+			if ("end".equalsIgnoreCase(tokens[0])) {
 				break;
-			} else if (tokens[0].equalsIgnoreCase("add")) {
+			} else if ("add".equalsIgnoreCase(tokens[0])) {
 				train.add(Integer.parseInt(tokens[1]));
 			} else {
 				for (int i = 0; i < train.size(); i++) {

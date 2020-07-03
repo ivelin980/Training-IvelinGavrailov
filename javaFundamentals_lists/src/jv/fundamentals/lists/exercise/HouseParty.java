@@ -32,7 +32,7 @@ public class HouseParty {
 		for (int i = 0; i < n; i++) {
 			String[] tokens = scan.nextLine().split("\\s+");
 			String name = tokens[0];
-			if (tokens[2].equals("not")) {
+			if ("not".equalsIgnoreCase(tokens[2])) {
 				if (guestOfParty.contains(name)) {
 					guestOfParty.remove(name);
 				} else {

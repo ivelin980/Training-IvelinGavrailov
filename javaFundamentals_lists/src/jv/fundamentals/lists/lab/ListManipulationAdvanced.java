@@ -67,6 +67,7 @@ public class ListManipulationAdvanced {
 					sum += number;
 				}
 				System.out.println(sum);
+				break;
 			case "filter":
 				switch (tokens[1]) {
 				case ">":
