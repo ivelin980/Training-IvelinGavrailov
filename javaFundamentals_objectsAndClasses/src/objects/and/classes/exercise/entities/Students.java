@@ -5,6 +5,12 @@ public class Students {
 	private String secondName;
 	private double grade;
 	
+	public Students(String firstName, String secondName, double grade) {
+		this.firstName = firstName;
+		this.secondName = secondName;
+		this.grade = grade;
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}

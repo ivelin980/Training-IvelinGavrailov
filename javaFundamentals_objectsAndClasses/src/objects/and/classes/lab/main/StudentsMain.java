@@ -20,23 +20,16 @@ public class StudentsMain {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		String[] input = scan.nextLine().split(" ");
+		String[] input = scan.nextLine().split("\\s+");
 		ArrayList<Student> students = new ArrayList<>();
-		while (!input[0].equalsIgnoreCase("end")) {
+		while (!"end".equalsIgnoreCase(input[0])) {
 			String firstName = input[0];
 			String lastName = input[1];
 			String age = input[2];
 			String hometown = input[3];
-
-			Student student = new Student();
-
-			student.setFirstName(firstName);
-			student.setLastName(lastName);
-			student.setAge(age);
-			student.setHometown(hometown);
-
+			Student student = new Student(firstName, lastName, age, hometown);
 			students.add(student);
-			input = scan.nextLine().split(" ");
+			input = scan.nextLine().split("\\s+");
 		}
 
 		String searchedHometown = scan.nextLine();

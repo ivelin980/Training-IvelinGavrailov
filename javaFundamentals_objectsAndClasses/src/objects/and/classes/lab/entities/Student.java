@@ -5,6 +5,13 @@ public class Student {
 	private String lastName;
 	private String age;
 	private String hometown;
+	
+	public Student(String firstName, String lastName, String age, String hometown) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.age = age;
+		this.hometown = hometown;
+	}
 
 	public String getFirstName() {
 		return firstName;

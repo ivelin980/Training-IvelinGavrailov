@@ -5,6 +5,12 @@ public class Song {
 	private String name;
 	private String time;
 
+	public Song(String typeList, String name, String time) {
+		this.typeList = typeList;
+		this.name = name;
+		this.time = time;
+	}
+
 	public String getTypeList() {
 		return typeList;
 	}
@@ -28,7 +34,7 @@ public class Song {
 	public void setTime(String time) {
 		this.time = time;
 	}
-	
+
 	@Override
 	public String toString() {
 		return name;

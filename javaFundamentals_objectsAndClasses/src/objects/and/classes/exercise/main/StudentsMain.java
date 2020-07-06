@@ -28,10 +28,7 @@ public class StudentsMain {
 			String firstName = input[0];
 			String secondName = input[1];
 			double grade = Double.parseDouble(input[2]);
-			Students student = new Students();
-			student.setFirstName(firstName);
-			student.setSecondName(secondName);
-			student.setGrade(grade);
+			Students student = new Students(firstName, secondName, grade);
 			students.add(student);
 		}
 		students.stream().sorted((s1, s2) -> Double.compare(s2.getGrade(), s1.getGrade()))

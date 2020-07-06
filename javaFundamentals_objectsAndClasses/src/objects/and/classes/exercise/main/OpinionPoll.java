@@ -21,12 +21,10 @@ public class OpinionPoll {
 		int n = Integer.parseInt(scan.nextLine());
 		ArrayList<PersonOpinionPoll> people = new ArrayList<>();
 		for (int i = 0; i < n; i++) {
-			PersonOpinionPoll person = new PersonOpinionPoll();
 			String[] input = scan.nextLine().split(" ");
 			String name = input[0];
 			int age = Integer.parseInt(input[1]);
-			person.setName(name);
-			person.setAge(age);
+			PersonOpinionPoll person = new PersonOpinionPoll(name, age);
 			people.add(person);
 		}
 		people.stream().filter(p -> p.getAge() > 30).sorted((p1, p2) -> p1.getName().compareTo(p2.getName()))

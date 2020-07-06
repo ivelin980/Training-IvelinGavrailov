@@ -28,13 +28,7 @@ public class SongsMain {
 			String type = data[0];
 			String name = data[1];
 			String time = data[2];
-
-			Song song = new Song();
-
-			song.setTypeList(type);
-			song.setName(name);
-			song.setTime(time);
-
+			Song song = new Song(type, name, time);
 			songs.add(song);
 		}
 		String chosenTypeList = scan.nextLine();
