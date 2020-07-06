@@ -23,14 +23,11 @@ public class OrderByAgeMain {
 		Scanner scan = new Scanner(System.in);
 		String[] input = scan.nextLine().split("\\s+");
 		ArrayList<PersonOrderByAge> people = new ArrayList<>();
-		while (!input[0].equalsIgnoreCase("End")) {
+		while (!"End".equalsIgnoreCase(input[0])) {
 			String name = input[0];
 			String id = input[1];
 			int age = Integer.parseInt(input[2]);
-			PersonOrderByAge person = new PersonOrderByAge();
-			person.setName(name);
-			person.setId(id);
-			person.setAge(age);
+			PersonOrderByAge person = new PersonOrderByAge(name, id, age);
 			people.add(person);
 			input = scan.nextLine().split("\\s+");
 		}

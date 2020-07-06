@@ -6,6 +6,13 @@ public class VehicleCatalogue {
 	private String color;
 	private double horsepower;
 
+	public VehicleCatalogue(String type, String brand, String color, double horsepower) {
+		this.type = type;
+		this.brand = brand;
+		this.color = color;
+		this.horsepower = horsepower;
+	}
+
 	public String getType() {
 		return type;
 	}

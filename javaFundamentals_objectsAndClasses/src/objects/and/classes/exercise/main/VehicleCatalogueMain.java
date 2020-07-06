@@ -39,11 +39,7 @@ public class VehicleCatalogueMain {
 			String brand = input[1];
 			String color = input[2];
 			double horsepower = Double.parseDouble(input[3]);
-			VehicleCatalogue vehicle = new VehicleCatalogue();
-			vehicle.setType(type);
-			vehicle.setBrand(brand);
-			vehicle.setColor(color);
-			vehicle.setHorsepower(horsepower);
+			VehicleCatalogue vehicle = new VehicleCatalogue(type, brand, color, horsepower);
 			vehicles.add(vehicle);
 			input = scan.nextLine().split("\\s+");
 		}

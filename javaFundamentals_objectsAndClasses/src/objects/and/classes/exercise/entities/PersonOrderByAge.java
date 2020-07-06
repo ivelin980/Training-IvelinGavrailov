@@ -4,6 +4,12 @@ public class PersonOrderByAge {
 	private String name;
 	private String id;
 	private int age;
+	
+	public PersonOrderByAge(String name, String id, int age) {
+		this.name = name;
+		this.id = id;
+		this.age = age;
+	}
 
 	public String getName() {
 		return name;
