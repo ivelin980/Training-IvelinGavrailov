@@ -48,12 +48,12 @@ public class VehicleCatalogue {
 	@Override
 	public String toString() {
 		if (this.type.equals("car")) {
-			String output = String.format("Type: Car%nModel: %s%nColor: %s%nHorsepower: %.0f", this.brand, this.color,
-					this.horsepower);
+			String output = String.format("Type: Car%nModel: %s%nColor: %s%nHorsepower: %.0f", brand, color,
+					horsepower);
 			return output;
 		}
-		String output = String.format("Type: Truck%nModel: %s%nColor: %s%nHorsepower: %.0f", this.brand, this.color,
-				this.horsepower);
+		String output = String.format("Type: Truck%nModel: %s%nColor: %s%nHorsepower: %.0f", brand, color,
+				horsepower);
 		return output;
 	}
 }

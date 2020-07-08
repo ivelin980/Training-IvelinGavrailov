@@ -47,6 +47,6 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return String.format("%s %s is %s years old%n", this.firstName, this.lastName, this.age);
+		return String.format("%s %s is %s years old%n", firstName, lastName, age);
 	}
 }

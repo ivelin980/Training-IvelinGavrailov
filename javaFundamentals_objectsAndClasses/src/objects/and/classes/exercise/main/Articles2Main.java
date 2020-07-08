@@ -3,7 +3,7 @@ package objects.and.classes.exercise.main;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import objects.and.classes.exercise.entities.Article2;
+import objects.and.classes.exercise.entities.Article;
 
 /**
  * Change the program, so you can store a list of articles. You will not need
@@ -23,13 +23,13 @@ public class Articles2Main {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int n = Integer.parseInt(scan.nextLine());
-		ArrayList<Article2> articles = new ArrayList<>();
+		ArrayList<Article> articles = new ArrayList<>();
 		for (int i = 0; i < n; i++) {
 			String[] input = scan.nextLine().split(", ");
 			String title = input[0];
 			String content = input[1];
 			String author = input[2];
-			Article2 article = new Article2(title,content,author);
+			Article article = new Article(title,content,author);
 			articles.add(article);
 		}
 		String criteria = scan.nextLine().toLowerCase();

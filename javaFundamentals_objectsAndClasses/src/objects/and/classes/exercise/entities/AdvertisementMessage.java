@@ -31,6 +31,6 @@ public class AdvertisementMessage {
 
 	@Override
 	public String toString() {
-		return String.format("%s %s %s - %s", this.phrase, this.event, this.author, this.city);
+		return String.format("%s %s %s - %s", phrase, event, author, city);
 	}
 }

@@ -1,11 +1,11 @@
 package objects.and.classes.exercise.entities;
 
-public class Students {
+public class Student {
 	private String firstName;
 	private String secondName;
 	private double grade;
-	
-	public Students(String firstName, String secondName, double grade) {
+
+	public Student(String firstName, String secondName, double grade) {
 		this.firstName = firstName;
 		this.secondName = secondName;
 		this.grade = grade;
@@ -37,7 +37,7 @@ public class Students {
 
 	@Override
 	public String toString() {
-		String output = String.format("%s %s: %.2f", this.firstName,this.secondName,this.grade);
+		String output = String.format("%s %s: %.2f", firstName, secondName, grade);
 		return output;
 	}
 }

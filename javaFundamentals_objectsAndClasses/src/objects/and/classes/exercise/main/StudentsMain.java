@@ -3,7 +3,7 @@ package objects.and.classes.exercise.main;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import objects.and.classes.exercise.entities.Students;
+import objects.and.classes.exercise.entities.Student;
 
 /**
  * Write a program that receives an n count of students and orders them by grade
@@ -22,13 +22,13 @@ public class StudentsMain {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int n = Integer.parseInt(scan.nextLine());
-		ArrayList<Students> students = new ArrayList<>();
+		ArrayList<Student> students = new ArrayList<>();
 		for (int i = 0; i < n; i++) {
 			String[] input = scan.nextLine().split(" ");
 			String firstName = input[0];
 			String secondName = input[1];
 			double grade = Double.parseDouble(input[2]);
-			Students student = new Students(firstName, secondName, grade);
+			Student student = new Student(firstName, secondName, grade);
 			students.add(student);
 		}
 		students.stream().sorted((s1, s2) -> Double.compare(s2.getGrade(), s1.getGrade()))

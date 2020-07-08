@@ -37,7 +37,7 @@ public class PersonOrderByAge {
 
 	@Override
 	public String toString() {
-		String output = String.format("%s with ID: %s is %d years old.", this.name, this.id, this.age);
+		String output = String.format("%s with ID: %s is %d years old.", name, id, age);
 		return output;
 	}
 
