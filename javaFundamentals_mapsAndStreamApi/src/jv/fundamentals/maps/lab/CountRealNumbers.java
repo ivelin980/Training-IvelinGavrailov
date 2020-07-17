@@ -21,9 +21,7 @@ public class CountRealNumbers {
 		double[] nums = Arrays.stream(scan.nextLine().split("\\s+")).mapToDouble(Double::parseDouble).toArray();
 		TreeMap<Double, Integer> counts = new TreeMap<>();
 		for (double num : nums) {
-			if (!counts.containsKey(num)) {
-				counts.put(num, 0);
-			}
+			counts.putIfAbsent(num, 0);
 			counts.put(num, counts.get(num) + 1);
 		}
 		for (Map.Entry<Double, Integer> entry : counts.entrySet()) {

@@ -35,13 +35,9 @@ public class LegendaryFarming {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		TreeMap<String, Integer> items = new TreeMap<>();
-		{
-			{
-				items.put("shards", 0);
-				items.put("motes", 0);
-				items.put("fragments", 0);
-			}
-		}
+		items.put("shards", 0);
+		items.put("motes", 0);
+		items.put("fragments", 0);
 		TreeMap<String, Integer> junk = new TreeMap<>();
 		boolean isObtained = false;
 		while (!isObtained) {
@@ -84,6 +80,8 @@ public class LegendaryFarming {
 			case "fragments":
 				System.out.println("Valanyr obtained!");
 				return true;
+			default:
+				break;
 			}
 		}
 		return false;

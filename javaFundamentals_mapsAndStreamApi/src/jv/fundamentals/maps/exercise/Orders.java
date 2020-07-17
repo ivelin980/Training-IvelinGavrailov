@@ -28,10 +28,7 @@ public class Orders {
 		Scanner scan = new Scanner(System.in);
 		String[] input = scan.nextLine().split("\\s+");
 		LinkedHashMap<String, ArrayList<Double>> products = new LinkedHashMap<>();
-		while (true) {
-			if ("buy".equalsIgnoreCase(input[0])) {
-				break;
-			}
+		while (!"buy".equalsIgnoreCase(input[0])) {
 			String name = input[0];
 			double price = Double.parseDouble(input[1]);
 			double quantity = Double.parseDouble(input[2]);

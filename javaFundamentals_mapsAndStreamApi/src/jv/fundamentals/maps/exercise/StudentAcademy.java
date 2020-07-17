@@ -30,13 +30,13 @@ public class StudentAcademy {
 			students.putIfAbsent(name, new ArrayList<>());
 			students.get(name).add(grade);
 		}
-		students.entrySet().stream().filter(s -> averageGrade(s.getValue()) >= 4.5)
-				.sorted((s1, s2) -> Double.compare(averageGrade(s2.getValue()), averageGrade(s1.getValue())))
-				.forEach(s -> System.out.println(String.format("%s -> %.2f", s.getKey(), averageGrade(s.getValue()))));
+		students.entrySet().stream().filter(s -> getAverageGrade(s.getValue()) >= 4.5)
+				.sorted((s1, s2) -> Double.compare(getAverageGrade(s2.getValue()), getAverageGrade(s1.getValue())))
+				.forEach(s -> System.out.println(String.format("%s -> %.2f", s.getKey(), getAverageGrade(s.getValue()))));
 		scan.close();
 	}
 
-	private static double averageGrade(ArrayList<Double> grades) {
+	private static double getAverageGrade(ArrayList<Double> grades) {
 		double sumOfGrades = 0.0;
 		int counter = 0;
 		for (Double grade : grades) {
