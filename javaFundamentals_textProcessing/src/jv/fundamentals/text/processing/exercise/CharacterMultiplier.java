@@ -18,30 +18,30 @@ public class CharacterMultiplier {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		String[] input = scan.nextLine().split("\\s+");
-		System.out.println(getCharactersProduct(input));
+		System.out.println(getCharactersTotalSum(input));
 		scan.close();
 	}
 
-	private static int getCharactersProduct(String[] input) {
+	private static int getCharactersTotalSum(String[] input) {
 		String firstString = input[0];
 		String secondString = input[1];
 		int sum = 0;
 		if (firstString.length() >= secondString.length()) {
-			for (int i = 0; i < secondString.length(); i++) {
-				sum += firstString.charAt(i) * secondString.charAt(i);
-			}
-			firstString = firstString.substring(secondString.length());
-			for (int i = 0; i < firstString.length(); i++) {
-				sum += firstString.charAt(i);
-			}
+			sum += getCharactersProduct(firstString, secondString);
 		} else {
-			for (int i = 0; i < firstString.length(); i++) {
-				sum += firstString.charAt(i) * secondString.charAt(i);
-			}
-			secondString = secondString.substring(firstString.length());
-			for (int i = 0; i < secondString.length(); i++) {
-				sum += secondString.charAt(i);
-			}
+			sum += getCharactersProduct(secondString, firstString);
+		}
+		return sum;
+	}
+
+	private static int getCharactersProduct(String biggerString, String smallerString) {
+		int sum = 0;
+		for (int i = 0; i < smallerString.length(); i++) {
+			sum += biggerString.charAt(i) * smallerString.charAt(i);
+		}
+		biggerString = biggerString.substring(smallerString.length());
+		for (int i = 0; i < biggerString.length(); i++) {
+			sum += biggerString.charAt(i);
 		}
 		return sum;
 	}
