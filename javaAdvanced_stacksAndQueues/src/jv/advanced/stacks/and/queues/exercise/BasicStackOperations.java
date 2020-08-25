@@ -25,20 +25,20 @@ public class BasicStackOperations {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		String[] tokens = scan.nextLine().split("\\s+");
-		int N = Integer.parseInt(tokens[0]);
-		int S = Integer.parseInt(tokens[1]);
-		int X = Integer.parseInt(tokens[2]);
+		int n = Integer.parseInt(tokens[0]);
+		int s = Integer.parseInt(tokens[1]);
+		int x = Integer.parseInt(tokens[2]);
 		int min = Integer.MAX_VALUE;
 		ArrayDeque<Integer> stack = new ArrayDeque<>();
 		int[] elements = Arrays.stream(scan.nextLine().split("\\s+")).mapToInt(Integer::parseInt).toArray();
-		for (int i = 0; i < N; i++) {
+		for (int i = 0; i < n; i++) {
 			stack.push(elements[i]);
 		}
-		for (int i = 0; i < S; i++) {
+		for (int i = 0; i < s; i++) {
 			stack.pop();
 		}
-		if (stack.contains(X)) {
-			System.out.println("true");
+		if (stack.contains(x)) {
+			System.out.println(true);
 		} else {
 			while (!stack.isEmpty()) {
 				int currentElement = stack.pop();

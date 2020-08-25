@@ -29,12 +29,13 @@ public class BasicQueueOperations {
 			queue.poll();
 		}
 		if (queue.contains(tokens[2])) {
-			System.out.println("true");
+			System.out.println(true);
 		} else {
 			if (!queue.isEmpty()) {
 				for (String n : queue) {
-					if (min > Integer.parseInt(n)) {
-						min = Integer.parseInt(n);
+					int number = Integer.parseInt(n);
+					if (min > number) {
+						min = number;
 					}
 				}
 				System.out.println(min);

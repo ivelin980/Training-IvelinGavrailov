@@ -31,7 +31,6 @@ public class MathPotato {
 				if (isPrimeCountExecution(counter)) {
 					System.out.println(String.format("Prime %s", person));
 					queue.push(person);
-					;
 				} else {
 					System.out.println(String.format("Removed %s", person));
 				}
