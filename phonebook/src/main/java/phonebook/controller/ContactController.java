@@ -12,9 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
 @Controller
 public class ContactController {
     private List<Contact> contacts;
+    public static final String REDIRECT = "redirect:/";
 
     public ContactController() {
         this.contacts = new ArrayList<Contact>();
@@ -30,12 +32,12 @@ public class ContactController {
     @PostMapping("/")
     public String storeContact(Contact contact) {
         this.contacts.add(contact);
-        return "redirect:/";
+        return REDIRECT;
     }
 
     @DeleteMapping("/contacts/{name}")
     public  String deleteContact(@PathVariable String name){
         this.contacts = this.contacts.stream().filter(c -> !c.getName().equals(name)).collect(Collectors.toList());
-        return "redirect:/";
+        return REDIRECT;
     }
 }
