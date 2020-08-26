@@ -16,24 +16,33 @@ import java.util.Scanner;
  *
  */
 public class BalancedParentheses {
-
+	
+	public static final char CURLY_BRACKETS_OPEN = '{';
+	public static final char SQUARE_BRACKETS_OPEN = '[';
+	public static final char ROUND_BRACKETS_OPEN = '(';
+	public static final char CURLY_BRACKETS_CLOSE = '}';
+	public static final char SQUARE_BRACKETS_CLOSE = ']';
+	public static final char ROUND_BRACKETS_CLOSE = ')';
+	public static final String NEGATIVE_RESULT = "NO";
+	public static final String POSITIVE_RESULT = "YES";
+	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		String input = scan.nextLine();
 		ArrayDeque<Character> stack = new ArrayDeque<>();
 		ArrayDeque<Character> queue = new ArrayDeque<>();
-		String result = "YES";
+		String result = POSITIVE_RESULT;
 		for (int i = 0; i < input.length(); i++) {
 			char n = input.charAt(i);
 			switch (n) {
-			case '{':
-			case '[':
-			case '(':
+			case CURLY_BRACKETS_OPEN:
+			case SQUARE_BRACKETS_OPEN:
+			case ROUND_BRACKETS_OPEN:
 				stack.push(n);
 				break;
-			case '}':							
-			case ']':								
-			case ')':							  
+			case CURLY_BRACKETS_CLOSE:							
+			case SQUARE_BRACKETS_CLOSE:								
+			case ROUND_BRACKETS_CLOSE:							  
 				queue.offer(n);
 				break;
 			default:
@@ -42,30 +51,30 @@ public class BalancedParentheses {
 		}
 
 		if (stack.size() != queue.size()) {
-			result = "NO";
+			result = NEGATIVE_RESULT;
 		} else {
 			while (!stack.isEmpty()) {
 				switch (stack.pop()) {
-				case '{':
-					if ('}' != queue.peek()) {
-						result = "NO";
+				case CURLY_BRACKETS_OPEN:
+					if (CURLY_BRACKETS_CLOSE != queue.peek()) {
+						result = NEGATIVE_RESULT;
 						break;
 					} else {
 						queue.poll();
 					}
 					break;
-				case '[':
-					if(']' != queue.peek()) {
-						result = "NO";
+				case SQUARE_BRACKETS_OPEN:
+					if(SQUARE_BRACKETS_CLOSE != queue.peek()) {
+						result = NEGATIVE_RESULT;
 						break;
 					}
 					else {
 						queue.poll();
 					}
 					break;
-				case '(':
-					if(')' != queue.peek()) {
-						result = "NO";
+				case ROUND_BRACKETS_OPEN:
+					if(ROUND_BRACKETS_CLOSE != queue.peek()) {
+						result = NEGATIVE_RESULT;
 						break;
 					}
 					else {
