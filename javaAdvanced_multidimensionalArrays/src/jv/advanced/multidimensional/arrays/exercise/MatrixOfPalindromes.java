@@ -23,17 +23,20 @@ public class MatrixOfPalindromes {
 		int[] input = Arrays.stream(scan.nextLine().split("\\s+")).mapToInt(Integer::parseInt).toArray();
 		int rows = input[0];
 		int cols = input[1];
-		String[][] matrix = new String[rows][cols];
+		StringBuffer[][] matrix = new StringBuffer[rows][cols];
 		for (int row = 0; row < matrix.length; row++) {
 			for (int col = 0; col < matrix[row].length; col++) {
-				matrix[row][col] = "" + (char) ('a' + row) + (char) ('a' + row + col) + (char) ('a' + row);
+				matrix[row][col] = new StringBuffer();
+				matrix[row][col].append((char)('a'+row));
+				matrix[row][col].append((char)('a'+row+col));
+				matrix[row][col].append((char)('a'+row));
 			}
 		}
 		printMatrix(matrix);
 		scan.close();
 	}
 
-	private static void printMatrix(String[][] matrix) {
+	private static void printMatrix(StringBuffer[][] matrix) {
 		for (int row = 0; row < matrix.length; row++) {
 			for (int col = 0; col < matrix[row].length; col++) {
 				System.out.print(matrix[row][col] + " ");

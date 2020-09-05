@@ -32,18 +32,16 @@ public class PrintDiagonalsOfSquareMatrix {
 		}
 		return matrix;
 	}
-	
+
 	private static void printDiagonalsOfSquareMatrix(int[][] matrix) {
 		int col = 0;
 		for (int row = 0; row < matrix.length; row++) {
-			System.out.print(matrix[row][col] + " ");
-			col++;
+			System.out.print(matrix[row][col++] + " ");
 		}
 		System.out.println();
 		col = 0;
-		for (int row = matrix.length -1 ; row >= 0; row--) {
-			System.out.print(matrix[row][col] + " ");
-			col++;
+		for (int row = matrix.length - 1; row >= 0; row--) {
+			System.out.print(matrix[row][col++] + " ");
 		}
 	}
 }

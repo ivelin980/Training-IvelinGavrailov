@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-
 /**
  * You will receive two integers which represent the dimensions of a matrix.
  * Then, you must fill the matrix with increasing integers starting from 1, and
@@ -40,45 +39,38 @@ public class Crossfire {
 		int rows = matrixSize[0];
 		int cols = matrixSize[1];
 		ArrayList<ArrayList<Integer>> matrix = new ArrayList<>();
-		fillMatrix(matrix,rows,cols);
+		fillMatrix(matrix, rows, cols);
 		String input = scan.nextLine();
-		while(!"Nuke it from orbit".equalsIgnoreCase(input)) {
+		while (!"Nuke it from orbit".equalsIgnoreCase(input)) {
 			int[] tokens = Arrays.stream(input.split("\\s+")).mapToInt(Integer::parseInt).toArray();
 			int row = tokens[0];
 			int col = tokens[1];
 			int rad = tokens[2];
 			ArrayList<Integer> currentRow = matrix.get(row);
-			
 			for (int i = col - rad; i <= col + rad; i++) {
-				if(row >= 0 && row < matrix.size() && i >= 0 && i < matrix.get(row).size()) {
-				currentRow.set(i, -1);		
-				} 
+				if (row >= 0 && row < matrix.size() && i >= 0 && i < matrix.get(row).size()) {
+					currentRow.set(i, -1);
+				}
 			}
-			
 			for (int i = row - rad; i <= row + rad; i++) {
-				if(i >= 0 && i < matrix.size() && col >= 0 && col < matrix.get(i).size()) {
+				if (i >= 0 && i < matrix.size() && col >= 0 && col < matrix.get(i).size()) {
 					matrix.get(i).set(col, -1);
 				}
 			}
-			
 			for (ArrayList<Integer> integers : matrix) {
 				removeNegativeValues(integers);
 			}
-			
 			matrix.removeIf(ArrayList::isEmpty);
-					
 			input = scan.nextLine();
 		}
-		
 		printMatrix(matrix);
 		scan.close();
 	}
 
 	private static void removeNegativeValues(ArrayList<Integer> currentRow) {
-		while(currentRow.contains(-1)) {
+		while (currentRow.contains(-1)) {
 			currentRow.remove(currentRow.indexOf(-1));
 		}
-		
 	}
 
 	private static void fillMatrix(ArrayList<ArrayList<Integer>> matrix, int rows, int cols) {
@@ -91,7 +83,7 @@ public class Crossfire {
 			matrix.add(arrList);
 		}
 	}
-	
+
 	private static void printMatrix(ArrayList<ArrayList<Integer>> matrix) {
 		for (ArrayList<Integer> integers : matrix) {
 			for (Integer integer : integers) {

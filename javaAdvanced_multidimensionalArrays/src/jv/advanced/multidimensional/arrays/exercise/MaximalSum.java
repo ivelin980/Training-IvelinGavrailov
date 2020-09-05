@@ -33,7 +33,6 @@ public class MaximalSum {
 				sum = matrix[row][col] + matrix[row + 1][col] + matrix[row + 2][col] + matrix[row][col + 1]
 						+ matrix[row + 1][col + 1] + matrix[row + 2][col + 1] + matrix[row][col + 2]
 						+ matrix[row + 1][col + 2] + matrix[row + 2][col + 2];
-
 				if (maxSum < sum) {
 					maxSum = sum;
 					resultRow = row;
@@ -41,8 +40,7 @@ public class MaximalSum {
 				}
 			}
 		}
-		System.out.print(String.format("Sum = %d", maxSum));
-		System.out.println();
+		System.out.println(String.format("Sum = %d", maxSum));
 		for (int row = resultRow; row <= resultRow + 2; row++) {
 			for (int col = resultCol; col <= resultCol + 2; col++) {
 				System.out.print(matrix[row][col] + " ");
