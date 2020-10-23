@@ -25,14 +25,14 @@ import java.util.Scanner;
  *
  */
 public class HandsOfCards {
-
+	private static final String COLON = ":";
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		String input = scan.nextLine();
 		LinkedHashMap<String,ArrayList<String>> player = new LinkedHashMap<>();
 		while (!"JOKER".equalsIgnoreCase(input)) {
-			String name = input.substring(0, input.indexOf(':'));
-			String cardsInput = input.substring(input.indexOf(':') + 2, input.length());
+			String name = input.substring(0, input.indexOf(COLON));
+			String cardsInput = input.substring(input.indexOf(COLON) + 2, input.length());
 			String[] cards = cardsInput.split(", ");
 			for (String card : cards) {				
 				player.putIfAbsent(name, new ArrayList<>());
@@ -43,7 +43,7 @@ public class HandsOfCards {
 			input = scan.nextLine();
 		}
 		for (Map.Entry<String, ArrayList<String>> entry : player.entrySet()) {
-			System.out.println(entry.getKey() + ": " + getCardsPower(entry.getValue()));
+			System.out.println(entry.getKey() + COLON + " " + getCardsPower(entry.getValue()));
 		}
 		scan.close();
 	}

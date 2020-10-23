@@ -30,8 +30,9 @@ public class ProductShop {
 			String product = tokens[1];
 			Double price = Double.parseDouble(tokens[2]);
 			productShop.putIfAbsent(shop, new LinkedHashMap<>());
-			productShop.get(shop).putIfAbsent(product, 0.0);
-			productShop.get(shop).put(product, productShop.get(shop).get(product) + price);
+			LinkedHashMap<String, Double> thisShop = productShop.get(shop);
+			thisShop.putIfAbsent(product, 0.0);
+			thisShop.put(product, thisShop.get(product) + price);
 			input = scan.nextLine();
 		}
 		for (Map.Entry<String, LinkedHashMap<String, Double>> entry : productShop.entrySet()) {

@@ -17,17 +17,15 @@ import java.util.Scanner;
  *
  */
 public class MinerTask {
-
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		String input = scan.nextLine();
+		String resource = scan.nextLine();
 		LinkedHashMap<String, Integer> mine = new LinkedHashMap<>();
-		while (!"stop".equalsIgnoreCase(input)) {
-			String resource = input;
+		while (!"stop".equalsIgnoreCase(resource)) {
 			int quantity = Integer.parseInt(scan.nextLine());
 			mine.putIfAbsent(resource, 0);
 			mine.put(resource, mine.get(resource)+quantity);
-			input = scan.nextLine();
+			resource = scan.nextLine();
 		}
 		for (Map.Entry<String, Integer> entry : mine.entrySet()) {
 			System.out.println(entry.getKey() + " -> " + entry.getValue());

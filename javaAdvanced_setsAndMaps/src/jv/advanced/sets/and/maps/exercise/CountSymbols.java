@@ -19,7 +19,8 @@ public class CountSymbols {
 		Scanner scan = new Scanner(System.in);
 		String input = scan.nextLine();
 		TreeMap<Character, Integer> characters = new TreeMap<>();
-		for (int i = 0; i < input.length(); i++) {
+		int sizeOfInput = input.length();
+		for (int i = 0; i < sizeOfInput; i++) {
 			char ch = input.charAt(i);
 			characters.putIfAbsent(ch, 0);
 			characters.put(ch, characters.get(ch) + 1);
