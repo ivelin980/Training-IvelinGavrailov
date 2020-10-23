@@ -21,9 +21,9 @@ public class SortLines {
 	public static void main(String[] args) {
 		Path path = Paths.get("input.txt");
 
-		try(PrintWriter out = new PrintWriter("output.txt")) {
+		try (PrintWriter out = new PrintWriter("output.txt")) {
 			List<String> lines = Files.readAllLines(path);
-			lines.stream().sorted().forEach(l -> out.write(l+"\n"));
+			lines.stream().sorted().forEach(l -> out.write(l + "\n"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

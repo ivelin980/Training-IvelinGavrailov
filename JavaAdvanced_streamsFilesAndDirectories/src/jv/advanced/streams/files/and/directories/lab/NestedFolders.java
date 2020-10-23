@@ -20,18 +20,18 @@ public class NestedFolders {
 		File file = new File(path);
 		ArrayList<String> finalList = new ArrayList<>();
 		File[] listFolders = file.listFiles();
-		getFileNames(listFolders,finalList);
+		getFileNames(listFolders, finalList);
 		System.out.println(file.getName());
 		finalList.stream().forEach(f -> System.out.println(f));
-		System.out.println(finalList.size()+1 + " folders");
+		System.out.println(finalList.size() + 1 + " folders");
 	}
 
-	private static void getFileNames(File[] listFolders,ArrayList<String> finalList) {
+	private static void getFileNames(File[] listFolders, ArrayList<String> finalList) {
 		for (File file : listFolders) {
 			if (file.isDirectory()) {
 				finalList.add(file.getName());
 				if (file.listFiles() != null) {
-					getFileNames(file.listFiles(),finalList);
+					getFileNames(file.listFiles(), finalList);
 				}
 			}
 		}

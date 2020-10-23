@@ -20,7 +20,7 @@ public class ReadFile {
 		try (FileInputStream fileStream = new FileInputStream(path)) {
 			int oneByte = fileStream.read();
 			while (oneByte != -1) {
-				System.out.print(Integer.toBinaryString(oneByte)+" ");
+				System.out.print(Integer.toBinaryString(oneByte) + " ");
 				oneByte = fileStream.read();
 			}
 		} catch (IOException e) {
