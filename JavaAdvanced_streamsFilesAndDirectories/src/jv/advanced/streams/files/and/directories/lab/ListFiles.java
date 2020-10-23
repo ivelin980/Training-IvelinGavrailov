@@ -19,8 +19,8 @@ public class ListFiles {
 		File file = new File(path);
 		File[] array = file.listFiles();
 		for (File f : array) {
-			if(f.isFile()) {
-			System.out.println(String.format("%s: [%d]", f.getName(),f.length()));
+			if (f.isFile()) {
+				System.out.println(String.format("%s: [%d]", f.getName(), f.length()));
 			}
 		}
 	}
