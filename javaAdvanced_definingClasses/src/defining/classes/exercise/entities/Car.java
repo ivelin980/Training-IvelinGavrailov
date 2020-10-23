@@ -44,6 +44,7 @@ public class Car {
 	public void setTires(Tires tires) {
 		this.tires = tires;
 	}
+
 	@Override
 	public String toString() {
 		return getModel() + " " + getCargo() + " " + getEngine() + " " + getTires();

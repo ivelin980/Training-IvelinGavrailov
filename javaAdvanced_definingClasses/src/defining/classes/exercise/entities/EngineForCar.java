@@ -5,22 +5,14 @@ public class EngineForCar {
 	private int power;
 	private String displacement;
 	private String efficiency;
-	
+
 	public EngineForCar(String model, int power, String displacement, String efficiency) {
 		this.model = model;
 		this.power = power;
-		if(displacement == null) {
-			this.displacement = "n/a";
-		} else {
-		this.displacement = displacement;
-		}
-		if(efficiency == null) {
-			this.efficiency = "n/a";
-		} else {
-		this.efficiency = efficiency;
-		}
+		this.displacement = displacement == null ? "n/a" : displacement;
+		this.efficiency = efficiency == null ? "n/a" : efficiency;
 	}
-	
+
 	public String getModel() {
 		return model;
 	}
@@ -52,6 +44,5 @@ public class EngineForCar {
 	public void setEfficiency(String efficiency) {
 		this.efficiency = efficiency;
 	}
-	
-	
+
 }

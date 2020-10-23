@@ -30,7 +30,7 @@ public class Department {
 	}
 
 	public double getAverageSalary() {
-		return employees.stream().mapToDouble(e -> e.getSalary()).average().orElse(0.0);
+		return employees.stream().mapToDouble(Employee::getSalary).average().orElse(0.0);
 	}
 
 }

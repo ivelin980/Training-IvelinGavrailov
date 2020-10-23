@@ -9,16 +9,8 @@ public class CarForSale {
 	public CarForSale(String model, EngineForCar engine, String weight, String color) {
 		this.model = model;
 		this.engine = engine;
-		if (weight == null) {
-			this.weight = "n/a";
-		} else {
-			this.weight = weight;
-		}
-		if (color == null) {
-			this.color = "n/a";
-		} else {
-			this.color = color;
-		}
+		this.weight = weight == null ? "n/a" : weight;
+		this.color = color == null ? "n/a" : color;
 	}
 
 	public String getModel() {

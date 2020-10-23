@@ -24,7 +24,7 @@ public class BankAccount {
 	}
 	
 	public double getInterest(int years) {
-		return interest * years * this.balance;
+		return interest * years * balance;
 	}
 	
 	public static void setInterestRate(double interest) {

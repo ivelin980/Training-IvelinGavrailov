@@ -49,23 +49,25 @@ public class CompanyRoaster {
 					age = Integer.parseInt(tokens[5]);
 				}
 			} catch (IndexOutOfBoundsException e) {
-
-			}
+				e.printStackTrace();
+			}		
 			Employee employee = new Employee(name, salary, position, department, email, age);
 			employees.add(employee);
 			departments.putIfAbsent(department, new Department(department));
 			departments.get(department).getEmployees().add(employee);
 		}
-		Department maxDepartment = departments.entrySet().stream().max(Comparator.comparingDouble(f -> f.getValue().getAverageSalary())).get()
-				.getValue();
+		
+		Department maxDepartment = departments.entrySet().stream()
+				.max(Comparator.comparingDouble(f -> f.getValue().getAverageSalary())).get().getValue();
 		System.out.println(String.format("Highest Average Salary: %s", maxDepartment.getName()));
-		maxDepartment.getEmployees().stream().sorted((e1,e2) -> Double.compare(e2.getSalary(), e1.getSalary())).forEach(e -> System.out.println(e.toString()));
+		maxDepartment.getEmployees().stream().sorted((e1, e2) -> Double.compare(e2.getSalary(), e1.getSalary()))
+				.forEach(e -> System.out.println(e.toString()));
 		scan.close();
 	}
 
 	public static boolean isNumeric(String strNum) {
 		for (int i = 0; i < strNum.length(); i++) {
-			if(!Character.isDigit(strNum.charAt(i))) {
+			if (!Character.isDigit(strNum.charAt(i))) {
 				return false;
 			}
 		}

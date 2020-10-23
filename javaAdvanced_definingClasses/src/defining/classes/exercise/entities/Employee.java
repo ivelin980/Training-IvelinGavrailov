@@ -8,21 +8,13 @@ public class Employee {
 	private String email;
 	private int age;
 
-	public Employee(String name, double salary, String position, String department,String email, int age) {
+	public Employee(String name, double salary, String position, String department, String email, int age) {
 		this.name = name;
 		this.salary = salary;
 		this.position = position;
 		this.department = department;
-		if(email!=null) {
-			this.email = email;
-		} else {
-			this.email = "n/a";
-		}
-		if(age!=0) {
-		this.age = age;
-		} else {
-			this.age = -1;
-		}
+		this.email = email == null ? "n/a" : email;
+		this.age = age == 0 ? -1 : age;
 	}
 
 	public String getName() {
@@ -72,10 +64,10 @@ public class Employee {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	
+
 	@Override
 	public String toString() {
-		return String.format("%s %.2f %s %d",name,salary,email,age);
+		return String.format("%s %.2f %s %d", name, salary, email, age);
 	}
-	
+
 }
