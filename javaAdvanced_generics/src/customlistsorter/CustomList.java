@@ -43,7 +43,7 @@ public class CustomList<E extends Comparable<E>> {
 		return (E) this.elements[index];
 	}
 
-	E remove(int index) {
+	public E remove(int index) {
 		ensureIndex(index);
 		@SuppressWarnings("unchecked")
 		E elementToRemove = (E) this.elements[index];
@@ -69,7 +69,7 @@ public class CustomList<E extends Comparable<E>> {
 		return -1;
 	}
 
-	void swap(int firstIndex, int secondIndex) {
+	public void swap(int firstIndex, int secondIndex) {
 		ensureIndex(firstIndex);
 		ensureIndex(secondIndex);
 		Object temp = this.elements[firstIndex];
@@ -106,7 +106,7 @@ public class CustomList<E extends Comparable<E>> {
 	@Override
 	public String toString() {
 		for (int i = 0; i < this.size; i++) {
-			System.out.println(this.elements[i]);
+			System.out.print(this.elements[i] + " ");
 		}
 		return "";
 	}

@@ -102,7 +102,7 @@ public class CustomList<E extends Comparable<E>> {
 	@Override
 	public String toString() {
 		for (int i = 0; i < this.size; i++) {
-			System.out.println(this.elements[i]);
+			System.out.print(this.elements[i] + " ");
 		}
 		return "";
 	}

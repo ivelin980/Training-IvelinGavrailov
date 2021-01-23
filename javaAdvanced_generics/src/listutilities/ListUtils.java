@@ -23,7 +23,7 @@ public class ListUtils {
 
 	public static <T extends Comparable<T>> void sort(List<T> list) {
 		if (list.isEmpty()) {
-			throw new IllegalArgumentException();
+			throw new IllegalArgumentException("Empty list cannot be sorted!");
 		}
 		Collections.sort(list);
 	}

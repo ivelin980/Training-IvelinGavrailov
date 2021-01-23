@@ -1,5 +1,10 @@
 package customlistsorter;
 
+/**
+ * @author iveli
+ *	Sorts the elements in the list in ascending order 
+ * @param <T>
+ */
 public class Sorter<T extends Comparable<T>> {
 	public void sort(CustomList<T> list) {
 		for (int i = 0; i < list.size(); i++) {
