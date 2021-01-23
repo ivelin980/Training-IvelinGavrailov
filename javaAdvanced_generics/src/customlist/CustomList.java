@@ -34,7 +34,7 @@ public class CustomList<E extends Comparable<E>> {
 
 	private void ensureIndex(int index) {
 		if (index < 0 || index >= this.size) {
-			throw new IndexOutOfBoundsException();
+			throw new IndexOutOfBoundsException("The index " + index + " is not between 0 and " + this.size);
 		}
 	}
 
