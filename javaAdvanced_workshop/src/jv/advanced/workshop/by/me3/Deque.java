@@ -16,7 +16,7 @@ public class Deque {
 	}
 
 	public void offer(Integer element) {
-		if(element==null) {
+		if (element == null) {
 			throw new NullPointerException(NULL_POINTER_MESSAGE);
 		}
 		if (this.elements[this.tail] == null) {
@@ -31,7 +31,7 @@ public class Deque {
 	}
 
 	public void push(Integer element) {
-		if(element==null) {
+		if (element == null) {
 			throw new NullPointerException(NULL_POINTER_MESSAGE);
 		}
 		if (this.elements[this.head] == null) {
@@ -45,40 +45,22 @@ public class Deque {
 		this.size++;
 	}
 	
+	/**
+	 * Inserts the specified element at the end of this deque. 
+	 * @param element
+	 * @return true
+	 * @throws NullPointerException - if the specified element is null
+	 */
 	public boolean add(Integer element) {
-		if(element==null) {
-			throw new NullPointerException(NULL_POINTER_MESSAGE);
-		}
-		if(this.elements[this.tail] == null) {
-			this.elements[this.tail] = element;
-		}
-		else {
-			if(this.tail == this.elements.length-1) {
-				this.elements = grow();
-			}
-		this.elements[++this.tail] = element;
-		}
-		size++;
+		this.offer(element);
 		return true;
 	}
-	
+
 	public boolean addFirst(Integer element) {
-		if(element==null) {
-			return add(element);
-		}
-		if(this.elements[this.head] == null) {
-			this.elements[this.head] = element;
-		}
-		else {
-			if(this.head == 0) {
-				this.elements = grow();
-			}
-		this.elements[--this.head] = element;
-		}
-		size++;
+		this.push(element);
 		return true;
 	}
-	
+
 	public boolean addLast(Integer element) {
 		return add(element);
 	}
@@ -125,22 +107,22 @@ public class Deque {
 			return false;
 		}
 		for (int i = this.head; i <= this.tail; i++) {
-				if (this.elements[i].equals(element)) {
-					if (i == this.head) {
-						removeFirst();
-					} else {
-						while(this.elements[i]!=null) {
-							int current = i;
-							Integer nextElement = this.elements[++i];
-							this.elements[current] = nextElement;
-						}
-						removeLast();
+			if (this.elements[i].equals(element)) {
+				if (i == this.head) {
+					removeFirst();
+				} else {
+					while (this.elements[i] != null) {
+						int current = i;
+						Integer nextElement = this.elements[++i];
+						this.elements[current] = nextElement;
 					}
+					removeLast();
 				}
 			}
-			return true;
 		}
-	
+		return true;
+	}
+
 	public boolean removeFirstOccurence(Integer element) {
 		return remove(element);
 	}
@@ -195,13 +177,8 @@ public class Deque {
 	public Integer peekLast() {
 		return this.elements[this.tail];
 	}
-	
+
 	public boolean isEmpty() {
-		if(size == 0) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		return size == 0;
 	}
 }

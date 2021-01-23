@@ -2,7 +2,7 @@ package jv.advanced.workshop.by.me;
 
 public class NodeMap {
 	private static final int INITIAL_SIZE = 4;
-	private NodeList buckets[];
+	private NodeList[] buckets;
 	
 	public NodeMap() {
 		this.buckets = new NodeList[INITIAL_SIZE];

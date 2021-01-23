@@ -14,11 +14,16 @@ public class DoublyLinkedList {
 			this.element = element;
 		}
 	}
-	
+
 	public int size() {
 		return this.size;
 	}
 
+	/**
+	 * Add new element at first position to the list
+	 * 
+	 * @param element
+	 */
 	public void addFirst(int element) {
 		Node newNode = new Node(element);
 		size++;
@@ -46,7 +51,7 @@ public class DoublyLinkedList {
 
 	public boolean removeFirst() {
 		if (this.head == null) {
-			throw new NullPointerException("The list is empty!");
+			return false;
 		}
 		this.head = this.head.next;
 		this.head.prev = null;
@@ -65,18 +70,14 @@ public class DoublyLinkedList {
 	}
 
 	public boolean isEmpty() {
-		boolean isEmpty = false;
-		if (this.head == null) {
-			isEmpty = true;
-		}
-		return isEmpty;
+		return this.head == null;
 	}
-	
+
 	public void insertAfter(int nodeValue, int element) {
 		Node current = this.head;
-		while(true) {
-			if(current.element == nodeValue) {
-				if(current.next == null) {
+		while (true) {
+			if (current.element == nodeValue) {
+				if (current.next == null) {
 					addLast(element);
 					return;
 				}
@@ -91,12 +92,12 @@ public class DoublyLinkedList {
 			current = current.next;
 		}
 	}
-	
+
 	public void insertBefore(int nodeValue, int element) {
 		Node current = this.head;
-		while(true) {
-			if(current.element == nodeValue) {
-				if(current.prev == null) {
+		while (true) {
+			if (current.element == nodeValue) {
+				if (current.prev == null) {
 					addFirst(element);
 					return;
 				}
