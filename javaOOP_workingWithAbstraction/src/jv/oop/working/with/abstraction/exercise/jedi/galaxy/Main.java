@@ -67,8 +67,7 @@ public class Main {
 	}
 
 	private static int[] getCoordinates(String command) {
-		int[] playerCoordinates = Arrays.stream(command.split(" ")).mapToInt(Integer::parseInt).toArray();
-		return playerCoordinates;
+		return Arrays.stream(command.split(" ")).mapToInt(Integer::parseInt).toArray();
 	}
 
 	private static void setSethDiagonalToZero(int[][] matrix, int sethRow, int sethCol) {
