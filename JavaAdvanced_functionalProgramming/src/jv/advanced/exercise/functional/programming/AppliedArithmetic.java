@@ -24,36 +24,36 @@ public class AppliedArithmetic {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		List<Integer> numbers = Arrays.stream(scan.nextLine().split("\\s+")).mapToInt(Integer::parseInt).boxed().collect(Collectors.toList());
+		List<Integer> numbers = Arrays.stream(scan.nextLine().split("\\s+")).mapToInt(Integer::parseInt).boxed()
+				.collect(Collectors.toList());
 		String action = scan.nextLine();
-		Map<String,UnaryOperator<List<Integer>>> unaryMap = new HashMap<>();
-		Consumer<List<Integer>> printAll = list -> list.stream().forEach(el->System.out.print(el + " "));
+		Map<String, UnaryOperator<List<Integer>>> unaryMap = new HashMap<>();
+		Consumer<List<Integer>> printAll = list -> list.stream().forEach(el -> System.out.print(el + " "));
 		unaryMap.put("add", list -> {
 			for (int i = 0; i < list.size(); i++) {
-				numbers.set(i, numbers.get(i)+1);
+				numbers.set(i, numbers.get(i) + 1);
 			}
 			return list;
 		});
 		unaryMap.put("multiply", list -> {
 			for (int i = 0; i < list.size(); i++) {
-				numbers.set(i, numbers.get(i)*2);
+				numbers.set(i, numbers.get(i) * 2);
 			}
 			return list;
 		});
 		unaryMap.put("subtract", list -> {
 			for (int i = 0; i < list.size(); i++) {
-				numbers.set(i, numbers.get(i)-1);
+				numbers.set(i, numbers.get(i) - 1);
 			}
 			return list;
 		});
 		while (!"end".equalsIgnoreCase(action)) {
-		if("print".equals(action)) {
-			printAll.accept(numbers);
-		}
-		else {
-		unaryMap.get(action).apply(numbers);
-		}
-		action = scan.nextLine();
+			if ("print".equals(action)) {
+				printAll.accept(numbers);
+			} else {
+				unaryMap.get(action).apply(numbers);
+			}
+			action = scan.nextLine();
 		}
 		scan.close();
 	}

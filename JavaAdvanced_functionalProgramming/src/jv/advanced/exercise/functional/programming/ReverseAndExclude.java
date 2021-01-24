@@ -19,11 +19,12 @@ public class ReverseAndExclude {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		List<Integer> numbers = Arrays.stream(scan.nextLine().split("\\s+")).mapToInt(Integer::parseInt).boxed().collect(Collectors.toList());
+		List<Integer> numbers = Arrays.stream(scan.nextLine().split("\\s+")).mapToInt(Integer::parseInt).boxed()
+				.collect(Collectors.toList());
 		int divisedBy = Integer.parseInt(scan.nextLine());
 		Predicate<Integer> divisible = number -> number % divisedBy != 0;
 		Collections.reverse(numbers);
-		numbers.stream().filter(divisible).forEach(el->System.out.print(el + " "));
+		numbers.stream().filter(divisible).forEach(el -> System.out.print(el + " "));
 		scan.close();
 	}
 }
