@@ -6,6 +6,9 @@ public class ComparatorByName implements Comparator<Person> {
 
 	@Override
 	public int compare(Person first, Person second) {
+		if(first == null || second == null) {
+			throw new IllegalArgumentException("Person objects cannot be null");
+		}
 		int result = first.getName().length() - second.getName().length();
 		if (result == 0) {
 			result = Character

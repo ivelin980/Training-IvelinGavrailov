@@ -5,7 +5,7 @@ public class Person {
 	private int age;
 
 	public Person(String name, int age) {
-		this.name = name;
+		setName(name);
 		this.age = age;
 	}
 
@@ -15,6 +15,13 @@ public class Person {
 
 	public int getAge() {
 		return age;
+	}
+	
+	private void setName(String name) {
+		if(name.isEmpty() || name == null) {
+			throw new IllegalArgumentException("Name cannot be empty or null");
+		}
+		this.name = name;
 	}
 
 	@Override

@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-public class Book implements Iterable<Book>{
+public class Book implements Iterable<Book> {
 	private String title;
 	private int year;
 	private List<String> authors;
@@ -42,5 +42,13 @@ public class Book implements Iterable<Book>{
 	@Override
 	public Iterator<Book> iterator() {
 		return null;
+	}
+
+	@Override
+	public String toString() {
+		if (authors.isEmpty()) {
+			return this.title + " " + this.year;
+		}
+		return this.title + " " + this.year + " by " + String.join(" and ", this.authors);
 	}
 }
