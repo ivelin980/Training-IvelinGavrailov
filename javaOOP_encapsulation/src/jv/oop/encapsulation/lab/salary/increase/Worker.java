@@ -9,7 +9,7 @@ public class Worker extends Person {
 	public Worker(String firstName, String lastName, int age, double salary) {
 		super(firstName, lastName, age);
 		setSalary(salary);
-		}
+	}
 
 	public double getSalary() {
 		return salary;

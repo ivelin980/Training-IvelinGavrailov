@@ -34,8 +34,6 @@ public class ValidationData {
 				return;
 			}
 		}
-		for (Worker person : people) {
-			System.out.println(person.toString());
-		}
+		people.stream().forEach(System.out::println);
 	}
 }

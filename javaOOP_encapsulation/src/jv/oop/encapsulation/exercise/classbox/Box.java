@@ -37,15 +37,16 @@ public class Box {
 	public double calculateVolume() {
 		return this.length * this.width * this.height;
 	}
-	
+
 	public void validateData(double parameter, String prefix) {
-		if(parameter <= 0) {
+		if (parameter <= 0) {
 			throw new IllegalArgumentException(prefix + " cannot be zero or negative");
 		}
 	}
-	
+
 	@Override
 	public String toString() {
-		return String.format("Surface Area - %.2f%nLateral Surface Area - %.2f%nVolume - %.2f", calculateSurfaceArea(),calculateLateralSurfaceArea(),calculateVolume());
+		return String.format("Surface Area - %.2f%nLateral Surface Area - %.2f%nVolume - %.2f", calculateSurfaceArea(),
+				calculateLateralSurfaceArea(), calculateVolume());
 	}
 }

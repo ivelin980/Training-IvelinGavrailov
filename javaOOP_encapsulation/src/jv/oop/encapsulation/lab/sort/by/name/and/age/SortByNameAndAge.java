@@ -43,9 +43,7 @@ public class SortByNameAndAge {
 			}
 		});
 
-		for (Person person : people) {
-			System.out.println(person.toString());
-		}
+		people.stream().forEach(System.out::println);
 	}
 
 }

@@ -55,9 +55,7 @@ public class ShoppingSpree {
 			shopping = scan.nextLine().split("\\s+");
 		}
 
-		for (Person p : people) {
-			System.out.println(p);
-		}
+		people.stream().forEach(System.out::println);
 		scan.close();
 	}
 

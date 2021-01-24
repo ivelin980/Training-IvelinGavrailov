@@ -54,7 +54,7 @@ public class Person {
 	
 	@Override
 	public String toString() {
-		String productsOutput = products.isEmpty() ? "Nothing bought" : products.stream().map(p -> p.getName()).collect(Collectors.joining(", "));
+		String productsOutput = products.isEmpty() ? "Nothing bought" : products.stream().map(Product::getName).collect(Collectors.joining(", "));
 		return this.name + " - " + productsOutput;
 	}
 }

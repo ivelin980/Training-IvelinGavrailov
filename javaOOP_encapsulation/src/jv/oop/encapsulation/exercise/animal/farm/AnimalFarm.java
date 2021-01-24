@@ -28,7 +28,7 @@ public class AnimalFarm {
 			System.out.println(chicken);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-			scan.close();
 		}
+		scan.close();
 	}
 }
