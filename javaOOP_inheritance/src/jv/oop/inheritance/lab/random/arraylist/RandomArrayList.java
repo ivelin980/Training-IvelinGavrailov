@@ -3,8 +3,11 @@ package jv.oop.inheritance.lab.random.arraylist;
 import java.util.ArrayList;
 import java.util.Random;
 
-@SuppressWarnings("serial")
 public class RandomArrayList<T> extends ArrayList<T> {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Random random;
 
 	public RandomArrayList() {

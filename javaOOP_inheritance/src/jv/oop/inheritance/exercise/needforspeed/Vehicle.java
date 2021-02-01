@@ -39,7 +39,7 @@ public class Vehicle {
 	public void drive(double kilometers) {
 		double consumption = getFuelConsumption() * kilometers;
 		if (getFuel() < consumption) {
-			throw new IllegalStateException("The fuel of" + getFuel() + " is not enough");
+			throw new IllegalStateException("The fuel of " + getFuel() + " is not enough");
 		}
 		setFuel(getFuel() - consumption);
 

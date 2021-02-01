@@ -54,9 +54,7 @@ public class Main {
 			typeInput = scan.nextLine();
 		}
 
-		for (Animal animal : animals) {
-			System.out.println(animal);
-		}
+		animals.stream().forEach(System.out::println);
 		scan.close();
 	}
 }
