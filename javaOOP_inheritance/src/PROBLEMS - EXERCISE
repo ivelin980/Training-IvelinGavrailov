@@ -1,0 +1,73 @@
+Exercises:
+Problem 1. Person (jv.oop.inheritance.exercise.person)
+NOTE: You need a public class Main. Create a package person.
+You are asked to model an application for storing data about people. You should be able to have a Person and a Child. The child derives from the person. Every person has a name, and an age. Your task is to model the application.
+The Person class also have getters for the fields.
+Create a Child class that inherits Person and has the same public constructor definition. However, do not copy the code from the Person class - reuse the Person class's constructor.
+
+Problem 2. Zoo (jv.oop.inheritance.exercise.zoo)
+Follow the diagram and create all of the classes. Each of them, except the Animal class, should inherit from another class. The Animal class should have field name – String and Getter for name.
+Every class should have:
+•	A public constructor, which accepts one parameter: name
+
+Problem 3. Players and Monsters (jv.oop.inheritance.exercise.players.and.monsters)
+Create a class Hero. It should contain the following members:
+•	A public constructor, which accepts:
+o	username – String
+o	level – int
+•	The following fields:
+o	username - String
+o	level – int
+•	Getters for username and level
+•	toString() method
+
+Problem 4. Need for Speed (jv.oop.inheritance.exercise.needforspeed)
+Create a base class Vehicle. It should contain the following members:
+•	DEFAULT_FUEL_CONSUMPTION – final static double (constant)
+•	fuelConsumption –double
+•	fuel – double
+•	horsePower – int
+•	Getters and Setters for the fields
+•	A public constructor which accepts (fuel, horsePower) and set the default fuel consumption on the field fuelConsumption
+•	void drive(double kilometers)
+o	The drive method should have a functionality to reduce the fuel based on the travelled kilometers and fuel consumption. Keep in mind that you can drive the vehicle only if you have enough fuel to finish the driving.
+The default fuel consumption for Vehicle is 1.25. Some of the classes have different default fuel consumption:
+•	SportCar – DEFAULT_FUEL_CONSUMPTION = 10
+•	RaceMotorcycle – DEFAULT_FUEL_CONSUMPTION = 8
+•	Car – DEFAULT_FUEL_CONSUMPTION = 3
+
+Problem 5. Restaurant (jv.oop.inheritance.exercise.restaurant)
+There are Food and Beverages in the restaurant and they are all products.
+The Product class must have the following members:
+•	A public constructor with the following parameters: String name, BigDecimal price
+•	name – String
+•	price – BigDecimal
+•	Getters for the fields
+Beverage and Food classes are products. The Beverage class must have the following members:
+•	A public constructor with the following parameters: String name, BigDecimal price, double milliliters
+•	name – String
+•	price – BigDecimal
+•	milliliters – double
+•	Getter for milliliters
+The Food class must have the following members:
+•	A constructor with the following parameters: String name, BigDecimal price, double grams
+•	name – String
+•	price – double
+•	grams – double
+•	Getter for grams
+HotBeverage and ColdBeverage are beverages and they accept the following parameters upon initialization: String name, BigDecimal price, double milliliters
+Coffee and Tea are hot beverages. The Coffee class must have the following additional members:
+•	double COFFEE_MILLILITERS = 50
+•	BigDecimal COFFEE_PRICE = 3.50
+•	caffeine – double
+•	Getter for caffeine
+MainDish, Dessert and Starter are food. They all accept the following parameters upon initialization: String name, BigDecimal price, double grams. Dessert must accept one more parameter in its constructor: double calories.
+•	calories – double
+•	Getter for calories
+Make Salmon, Soup and Cake inherit the proper classes.
+A Cake must have the following members upon initialization:
+•	double CAKE_GRAMS = 250
+•	double CAKE_CALORIES = 1000
+•	BigDecimal CAKE_PRICE = 5
+A Salmon must have the following members upon initialization:
+•	double SALMON_GRAMS = 22
