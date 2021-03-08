@@ -12,16 +12,16 @@ public class Audi extends CarImpl implements Rentable {
 		setMinRentDay(minRentDay);
 		setPricePerDay(pricePerDay);
 	}
-	
+
 	private void setMinRentDay(int minRentDay) {
-		if(minRentDay < 0) {
+		if (minRentDay < 0) {
 			throw new IllegalArgumentException(Constants.INVALID_MINRENTDAY);
 		}
 		this.minRentDay = minRentDay;
 	}
-	
+
 	private void setPricePerDay(double pricePerDay) {
-		if(pricePerDay < 0) {
+		if (pricePerDay < 0) {
 			throw new IllegalArgumentException(Constants.INVALID_PRICE);
 		}
 		this.pricePerDay = pricePerDay;

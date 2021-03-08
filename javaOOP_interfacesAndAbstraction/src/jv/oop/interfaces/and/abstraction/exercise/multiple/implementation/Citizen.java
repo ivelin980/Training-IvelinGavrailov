@@ -51,7 +51,7 @@ public class Citizen implements Identifiable, Birthable, Person {
 		int date = Integer.parseInt(birthDate.substring(0, 2));
 		int month = Integer.parseInt(birthDate.substring(3, 5));
 		int year = Integer.parseInt(birthDate.substring(6, 10));
-		if (date < 0 || date > 31 || month < 0 || month > 31 || year < 0 || year > 2021) {
+		if (date < 0 || date > 31 || month < 0 || month > 12 || year < 0 || year > 2021) {
 			throw new IllegalArgumentException(Constants.INVALID_BIRTHDATE);
 		}
 		this.birthDate = birthDate;
