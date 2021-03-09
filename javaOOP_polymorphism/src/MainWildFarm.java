@@ -1,5 +1,3 @@
-package jv.oop.exercise.client.code;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -42,13 +40,23 @@ public class MainWildFarm {
 		Scanner scan = new Scanner(System.in);
 		String[] inputTokens = scan.nextLine().split("\\s+");
 		List<Animal> animals = new ArrayList<>();
+		AnimalFactoryImpl factory = new AnimalFactoryImpl();
 		while (!"End".equalsIgnoreCase(inputTokens[0])) {
-			Animal animal = createAnimal(inputTokens);
+			String type = inputTokens[0];
+			String name = inputTokens[1];
+			double weight = Double.parseDouble(inputTokens[2]);
+			String livingRegion = inputTokens[3];
+			String breed = "";
+			if ("Cat".equalsIgnoreCase(type)) {
+				breed = inputTokens[4];
+			}
+			Animal animal = factory.createAnimal(name, type, weight, livingRegion, breed);
 			animal.makeSound();
 			inputTokens = scan.nextLine().split("\\s+");
 			String foodType = inputTokens[0];
 			int quantity = Integer.parseInt(inputTokens[1]);
 			try {
+
 				switch (foodType) {
 				case "Vegetable":
 					animal.eatFood(new Vegetable(quantity));
@@ -67,15 +75,5 @@ public class MainWildFarm {
 		}
 		animals.stream().forEach(System.out::println);
 		scan.close();
-	}
-
-	private static Animal createAnimal(String[] inputTokens) {
-		String type = inputTokens[0];
-		String name = inputTokens[1];
-		double weight = Double.parseDouble(inputTokens[2]);
-		String livingRegion = inputTokens[3];
-		String breed = "Cat".equalsIgnoreCase(type) ? inputTokens[4] : "";
-		AnimalFactoryImpl factory = new AnimalFactoryImpl();
-		return factory.createAnimal(name, type, weight, livingRegion, breed);
 	}
 }

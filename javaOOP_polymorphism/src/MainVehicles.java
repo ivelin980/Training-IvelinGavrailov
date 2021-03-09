@@ -1,4 +1,3 @@
-package jv.oop.exercise.client.code;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;

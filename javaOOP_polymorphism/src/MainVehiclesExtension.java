@@ -1,11 +1,11 @@
-package jv.oop.exercise.client.code;
-import java.util.LinkedHashMap;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
 import jv.oop.exercise.vehicles.extension.Bus;
+import jv.oop.exercise.vehicles.extension.Car;
+import jv.oop.exercise.vehicles.extension.Truck;
 import jv.oop.exercise.vehicles.extension.Vehicle;
-import jv.oop.exercise.vehicles.extension.VehicleFactoryImpl;
 
 /**
  * Use your solution of the previous task for starting point and add more
@@ -42,39 +42,38 @@ public class MainVehiclesExtension {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		Map<String, Vehicle> vehicles = new LinkedHashMap<>();
+		Map<String, Vehicle> vehicles = new HashMap<>();
 		String[] input = scan.nextLine().split("\\s+");
-		vehicles.put(input[0], createVehicle(input));
+		double fuelQuantity = Double.parseDouble(input[1]);
+		double fuelConsumption = Double.parseDouble(input[2]);
+		double tankCapacity = Double.parseDouble(input[2]);
+		vehicles.put("car", new Car(fuelQuantity, fuelConsumption, tankCapacity));
 		input = scan.nextLine().split("\\s+");
-		vehicles.put(input[0], createVehicle(input));
+		fuelQuantity = Double.parseDouble(input[1]);
+		fuelConsumption = Double.parseDouble(input[2]);
+		tankCapacity = Double.parseDouble(input[2]);
+		vehicles.put("truck", new Truck(fuelQuantity, fuelConsumption, tankCapacity));
 		input = scan.nextLine().split("\\s+");
-		vehicles.put(input[0], createVehicle(input));
+		fuelQuantity = Double.parseDouble(input[1]);
+		fuelConsumption = Double.parseDouble(input[2]);
+		tankCapacity = Double.parseDouble(input[2]);
+		vehicles.put("bus", new Bus(fuelQuantity, fuelConsumption, tankCapacity));
 		int n = Integer.parseInt(scan.nextLine());
 		while (n-- > 0) {
 			String[] tokens = scan.nextLine().split("\\s+");
 			try {
 				double param = Double.parseDouble(tokens[2]);
 				if ("Drive".equalsIgnoreCase(tokens[0])) {
-					vehicles.get(tokens[1]).drive(param);
+					vehicles.get(tokens[1].toLowerCase()).drive(param);
 				} else if ("Refuel".equalsIgnoreCase(tokens[0])) {
-					vehicles.get(tokens[1]).refuel(param);
+					vehicles.get(tokens[1].toLowerCase()).refuel(param);
 				} else if ("DriveEmpty".equalsIgnoreCase(tokens[0])) {
-					((Bus)vehicles.get(tokens[1])).driveEmpty(param);
+					((Bus) vehicles.get(tokens[1])).driveEmpty(param);
 				}
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}
 		}
-		vehicles.values().forEach(System.out::println);
 		scan.close();
-	}
-
-	private static Vehicle createVehicle(String[] tokens) {
-		String type = tokens[0];
-		double fuelQuantity = Double.parseDouble(tokens[1]);
-		double fuelConsumption = Double.parseDouble(tokens[2]);
-		double tankCapacity = Double.parseDouble(tokens[3]);
-		VehicleFactoryImpl factory = new VehicleFactoryImpl();
-		return factory.createVehicle(type, fuelQuantity, fuelConsumption, tankCapacity);
 	}
 }
