@@ -29,11 +29,11 @@ public class Period {
 		int year = tokens[0];
 		int month = tokens[1];
 		int dayOfMonth = tokens[2];
-		LocalDate dateTo = LocalDate.of(year, month, dayOfMonth);
-		if(this.dateFrom.compareTo(dateTo)>0) {
+		LocalDate date = LocalDate.of(year, month, dayOfMonth);
+		if(this.dateFrom.compareTo(date)>0) {
 			throw new IllegalArgumentException("Cannot set date earlier than the beginning date " + dateFrom);
 		}
-		this.dateTo = LocalDate.of(year, month, dayOfMonth);
+		this.dateTo = date;
 	}
 
 	public LocalDate getDateFrom() {
