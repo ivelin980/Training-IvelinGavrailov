@@ -2,15 +2,26 @@ package employees;
 
 import java.io.FileInputStream;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Main {
+	private static final String FILE_PATH = "Employees.txt";
 
 	public static void main(String[] args) {
-		String path = "Employees.txt";
+		List<Employee> employees = readEmployeesFromFile();
+		Set<EmployeeWorkingPair> pairs = createPairsOfEmployees(employees);
+		System.out.println(getPairWorkingLongestTogether(pairs));
+
+	}
+
+	private static List<Employee> readEmployeesFromFile() {
 		List<Employee> employees = new ArrayList<>();
-		try (FileInputStream fis = new FileInputStream(path); Scanner scan = new Scanner(fis);) {
+		try (FileInputStream fis = new FileInputStream(FILE_PATH); Scanner scan = new Scanner(fis);) {
 			while (scan.hasNextLine()) {
 				String[] tokens = scan.nextLine().split(", ");
 				int empID = Integer.parseInt(tokens[0]);
@@ -25,56 +36,37 @@ public class Main {
 					employees.stream().filter(e -> e.getEmployeeID() == employee.getEmployeeID())
 							.forEach(e -> e.addProject(projectID, dateFrom, dateTo));
 				}
-
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			return;
 		}
-
-		List<Pair> pairs = createPairsOfEmployees(employees);
-		System.out.println(getPairWorkingLongestTogether(pairs));
+		return employees;
 	}
 
-	private static List<Pair> createPairsOfEmployees(List<Employee> employees) {
-		List<Pair> pairs = new ArrayList<>();
+	private static Set<EmployeeWorkingPair> createPairsOfEmployees(List<Employee> employees) {
+		Set<EmployeeWorkingPair> pairs = new HashSet<>();
 		for (int i = 0; i < employees.size() - 1; i++) {
-			List<Project> currentEmployeeProjects = employees.get(i).getProjects();
+			Set<Project> currentEmployeeProjects = employees.get(i).getProjects();
 			for (int j = i + 1; j < employees.size(); j++) {
-				List<Project> nextEmployeeProjects = employees.get(j).getProjects();
-				for (int k = 0; k < currentEmployeeProjects.size(); k++) {
-					Project currentProjectOfCurrentEmployee = currentEmployeeProjects.get(k);
-					for (int l = 0; l < nextEmployeeProjects.size(); l++) {
-						if (currentProjectOfCurrentEmployee.getProjectID() == nextEmployeeProjects.get(l)
-								.getProjectID()) {
-							addPairToList(pairs, new Pair(employees.get(i), employees.get(j)),
-									currentProjectOfCurrentEmployee);
-						}
-					}
-				}
+				Set<Project> nextEmployeeProjects = employees.get(j).getProjects();
+				Set<Integer> mutualIDs = nextEmployeeProjects.stream().filter(currentEmployeeProjects::contains)
+						.map(Project::getProjectID).collect(Collectors.toSet());
+				pairs.add(new EmployeeWorkingPair(employees.get(i), employees.get(j), mutualIDs));
 			}
 		}
 		return pairs;
 	}
 
-	private static Pair addPairToList(List<Pair> pairs, Pair pair, Project project) {
-		if (!pairs.contains(pair)) {
-			pair.addMutualProject(project);
-			pairs.add(pair);
-		} else {
-			pairs.stream().filter(p -> p.equals(pair)).forEach(p -> p.addMutualProject(project));
-		}
-		return null;
-	}
-
-	public static String getPairWorkingLongestTogether(List<Pair> pairs) {
+	public static String getPairWorkingLongestTogether(Set<EmployeeWorkingPair> pairs) {
 		if (pairs == null || pairs.isEmpty()) {
 			throw new IllegalArgumentException("List is empty!");
 		}
-		Pair workingLongestTogether = pairs.get(0);
-		for (Pair pair : pairs) {
-			if (workingLongestTogether.getTimeWorkingTogether() < pair.getTimeWorkingTogether()) {
-				workingLongestTogether = pair;
+		Iterator<EmployeeWorkingPair> iterator = pairs.iterator();
+		EmployeeWorkingPair workingLongestTogether = iterator.next();
+		while (iterator.hasNext()) {
+			EmployeeWorkingPair currentPair = iterator.next();
+			if (workingLongestTogether.getTimeWorkingTogether() < currentPair.getTimeWorkingTogether()) {
+				workingLongestTogether = currentPair;
 			}
 		}
 		return String.format("Employee with ID %d and employee with ID %d are working togeher the longest - %d days",
