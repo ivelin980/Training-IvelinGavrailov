@@ -9,6 +9,14 @@ public class Project {
 		this.periodForEmployee = new Period(dateFrom, dateTo);
 	}
 
+	public int getProjectID() {
+		return projectID;
+	}
+
+	public Period getPeriodForEmployee() {
+		return periodForEmployee;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -39,16 +47,9 @@ public class Project {
 		return true;
 	}
 
-	public int getProjectID() {
-		return projectID;
-	}
-
-	public Period getPeriodForEmployee() {
-		return periodForEmployee;
-	}
-
 	@Override
 	public String toString() {
 		return String.format("%d %s %s", projectID, periodForEmployee.getDateFrom(), periodForEmployee.getDateTo());
 	}
+
 }

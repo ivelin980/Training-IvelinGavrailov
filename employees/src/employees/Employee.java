@@ -12,6 +12,27 @@ public class Employee {
 		projects = new HashSet<>();
 	}
 
+	public void addProject(int projectID, String dateFrom, String dateTo) {
+		projects.add(new Project(projectID, dateFrom, dateTo));
+	}
+
+	public int getEmployeeID() {
+		return employeeID;
+	}
+
+	public Set<Project> getProjects() {
+		return projects;
+	}
+
+	public Project getProjectByID(int projectID) {
+		for (Project project : projects) {
+			if (projectID == project.getProjectID()) {
+				return project;
+			}
+		}
+		return null;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -40,27 +61,6 @@ public class Employee {
 			return false;
 		}
 		return true;
-	}
-
-	public void addProject(int projectID, String dateFrom, String dateTo) {
-		projects.add(new Project(projectID, dateFrom, dateTo));
-	}
-
-	public int getEmployeeID() {
-		return employeeID;
-	}
-
-	public Set<Project> getProjects() {
-		return projects;
-	}
-
-	public Project getProjectByID(int projectID) {
-		for (Project project : projects) {
-			if (projectID == project.getProjectID()) {
-				return project;
-			}
-		}
-		return null;
 	}
 
 	@Override

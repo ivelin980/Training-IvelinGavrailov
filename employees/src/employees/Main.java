@@ -1,6 +1,7 @@
 package employees;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -12,34 +13,33 @@ import java.util.stream.Collectors;
 public class Main {
 	private static final String FILE_PATH = "Employees.txt";
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		List<Employee> employees = readEmployeesFromFile();
 		Set<EmployeeWorkingPair> pairs = createPairsOfEmployees(employees);
 		System.out.println(getPairWorkingLongestTogether(pairs));
 
 	}
 
-	private static List<Employee> readEmployeesFromFile() {
+	private static List<Employee> readEmployeesFromFile() throws FileNotFoundException {
 		List<Employee> employees = new ArrayList<>();
-		try (FileInputStream fis = new FileInputStream(FILE_PATH); Scanner scan = new Scanner(fis);) {
-			while (scan.hasNextLine()) {
-				String[] tokens = scan.nextLine().split(", ");
-				int empID = Integer.parseInt(tokens[0]);
-				int projectID = Integer.parseInt(tokens[1]);
-				String dateFrom = tokens[2];
-				String dateTo = tokens[3];
-				Employee employee = new Employee(empID);
-				if (!employees.contains(employee)) {
-					employee.addProject(projectID, dateFrom, dateTo);
-					employees.add(employee);
-				} else {
-					employees.stream().filter(e -> e.getEmployeeID() == employee.getEmployeeID())
-							.forEach(e -> e.addProject(projectID, dateFrom, dateTo));
-				}
+		FileInputStream fis = new FileInputStream(FILE_PATH);
+		Scanner scan = new Scanner(fis);
+		while (scan.hasNextLine()) {
+			String[] tokens = scan.nextLine().split(", ");
+			int empID = Integer.parseInt(tokens[0]);
+			int projectID = Integer.parseInt(tokens[1]);
+			String dateFrom = tokens[2];
+			String dateTo = tokens[3];
+			Employee employee = new Employee(empID);
+			if (!employees.contains(employee)) {
+				employee.addProject(projectID, dateFrom, dateTo);
+				employees.add(employee);
+			} else {
+				employees.stream().filter(e -> e.getEmployeeID() == employee.getEmployeeID())
+						.forEach(e -> e.addProject(projectID, dateFrom, dateTo));
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
 		}
+		scan.close();
 		return employees;
 	}
 
@@ -59,18 +59,19 @@ public class Main {
 
 	public static String getPairWorkingLongestTogether(Set<EmployeeWorkingPair> pairs) {
 		if (pairs == null || pairs.isEmpty()) {
-			throw new IllegalArgumentException("List is empty!");
+			throw new IllegalArgumentException("No employees working together!");
 		}
 		Iterator<EmployeeWorkingPair> iterator = pairs.iterator();
-		EmployeeWorkingPair workingLongestTogether = iterator.next();
+		EmployeeWorkingPair pairWorkingLongestTogether = iterator.next();
 		while (iterator.hasNext()) {
 			EmployeeWorkingPair currentPair = iterator.next();
-			if (workingLongestTogether.getTimeWorkingTogether() < currentPair.getTimeWorkingTogether()) {
-				workingLongestTogether = currentPair;
+			if (pairWorkingLongestTogether.getTimeWorkingTogether() < currentPair.getTimeWorkingTogether()) {
+				pairWorkingLongestTogether = currentPair;
 			}
 		}
-		return String.format("Employee with ID %d and employee with ID %d are working togeher the longest - %d days",
-				workingLongestTogether.getFirst().getEmployeeID(), workingLongestTogether.getSecond().getEmployeeID(),
-				workingLongestTogether.getTimeWorkingTogether());
+		return String.format("Employee with ID %d and employee with ID %d are working together the longest - %d days",
+				pairWorkingLongestTogether.getFirst().getEmployeeID(),
+				pairWorkingLongestTogether.getSecond().getEmployeeID(),
+				pairWorkingLongestTogether.getTimeWorkingTogether());
 	}
 }

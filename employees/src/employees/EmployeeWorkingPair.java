@@ -29,6 +29,10 @@ public class EmployeeWorkingPair {
 		return mutualProjectsIDs;
 	}
 
+	public long getTimeWorkingTogether() {
+		return timeWorkingTogether;
+	}
+
 	public long calculateTimeWorkingTogether() {
 		long daysOverall = 0;
 		for (Integer projectID : mutualProjectsIDs) {
@@ -55,10 +59,6 @@ public class EmployeeWorkingPair {
 					: 0;
 		}
 		return daysOverall;
-	}
-
-	public long getTimeWorkingTogether() {
-		return timeWorkingTogether;
 	}
 
 	public int hashCode() {
