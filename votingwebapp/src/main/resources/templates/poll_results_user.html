@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+ <meta charset="utf-8" /> 
+ <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>   
+        <title>OФИЦИАЛЕН САЙТ ЗА ГЛАСУВАНЕ НА РЕПУБЛИКА БЪЛГАРИЯ</title>
+     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link
+	href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+        <link href="/style.css" rel="stylesheet" />
+<meta charset="ISO-8859-1">
+    <script type="text/javascript">
+        function disableBack() { window.history.forward(); }
+        setTimeout("disableBack()", 0);
+        window.onunload = function () { null };
+    </script>
+    <style>
+th, td {
+  border: 1px solid black;
+  text-align: center;
+}
+
+table{
+  width: 100%;
+}
+td,th {
+ width: 50%;
+ border: 2px solid #00008b; 
+}
+</style>
+<title>Spring Boot Form Demo</title>
+</head>
+<body onload="if (document.referrer == '') self.location='/';">
+<div class="top-container">
+		<div style="text-align: left; position: static;">
+			<img src="/images/euflag.png" width="100" />
+		</div>
+		<div class="header-text">
+			<h1
+				style="color: #00008b; font-family: Lucida Console, Courier New, monospace">ОФИЦИАЛЕН
+				САЙТ ЗА ГЛАСУВАНЕ НА РЕПУБЛИКА БЪЛГАРИЯ</h1>
+		</div>
+		<div style="text-align: left;">
+			<img src="/images/gerb-bulgaria.png" width="120px" height="120px" />
+		</div>
+	</div>
+<div class="container">
+<div class="poll-result-style">
+<div class="list">
+<p>Резултати от вота</p>
+<p th:text="${poll.pollName}"></p>
+<div class="span6" style="margin: auto;align-content: center;
+  width: 100%;" th:each="pollOption : ${poll.getPollOptions()}">
+  <strong><span th:text="${pollOption.optionName}"></span></strong><span class="pull-right"><span th:text="${#numbers.formatDecimal(((pollOption.optionVotes + 0.0) / poll.getAllVotes()) * 100, 1, 0)} + '%'"></span> </span>
+  <div class="progress progress-info active">
+      <div class="bar" style="font-size: 15px" th:text="${pollOption.optionVotes}" th:with="result=${#numbers.formatDecimal(((pollOption.optionVotes + 0.0) / poll.getAllVotes()) * 100, 1, 0)}" th:style="'width:'+ ${result}+'%;'"></div>
+  </div>
+  </div>
+</div>
+<table>
+<tr>
+    <th><span>ПАРТИЯ, КОАЛИЦИЯ, ИК</span></th> 
+    <th><span>БРОЙ ГЛАСОВЕ</span></th>
+  </tr>
+  <tr th:each="pollOption : ${poll.getPollOptions()}">
+  <td><span th:text="${pollOption.optionName}"></span></td>
+  <td><span th:text="${pollOption.optionVotes}"></span></td>
+  </tr>
+  </table>
+  </div>
+  </div>
+  <div class="footer">
+	<p> &copy 2021 bgizbori.com</p>
+	</div>
+</body>
+</html>

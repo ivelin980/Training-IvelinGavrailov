@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link
+	href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<meta charset="utf-8" />
+<script type="text/javascript">
+</script>
+<title>Freelancer - Start Bootstrap Theme</title>
+<!-- Core theme CSS (includes Bootstrap)-->
+<link href="/style.css" rel="stylesheet" />
+<meta charset="ISO-8859-1">
+<title>OФИЦИАЛЕН САЙТ ЗА ГЛАСУВАНЕ НА РЕПУБЛИКА БЪЛГАРИЯ</title>
+</head>
+<body onload="if (document.referrer == '') self.location='/';">
+	<div class="top-container">
+		<div style="text-align: left; position: static;">
+			<img src="/images/euflag.png" width="100" />
+		</div>
+		<div class="header-text">
+			<h1
+				style="color: #00008b; font-family: Lucida Console, Courier New, monospace">ОФИЦИАЛЕН
+				САЙТ ЗА ГЛАСУВАНЕ НА РЕПУБЛИКА БЪЛГАРИЯ</h1>
+		</div>
+		<div style="text-align: left;">
+			<img src="/images/gerb-bulgaria.png" width="120px" height="120px" />
+		</div>
+	</div>
+	<div class="navbar">
+		<a class="active" href="/polls/list">ГЛАСУВАНИЯ</a> 
+		<a href="/admin/results">ВРЕМЕННИ РЕЗУЛТАТИ</a> 
+		<a href="/register">РЕГИСТРАЦИЯ НА ГЛАСУВАНЕ</a>
+	</div>
+	<div class="container">
+		<br> <br>
+		<div class="div-style" th:each="poll : ${polls}">
+			<form class="list" th:action="@{/startPoll}" th:method="post"
+				th:object="${vote}">
+				<br>
+				<p>
+					ВИД НА ИЗБОРИТЕ:<span th:text="${poll.getPollName()}"></span>
+				</p>
+				<br>
+				<p>
+					СЪЗДАТЕЛ НА ГЛАСУВАНЕТО:<span th:text="${poll.getPollOwner()}"></span>
+				</p>
+				<br> <input type="hidden" th:value="${poll.getPollId()}"
+					name="pollId" /> <input type="submit" value="АКТИВИРАНЕ">
+				<br>
+			</form>
+			<form class="list" th:action="@{/deletePoll}" th:method="post"
+				th:object="${vote}">
+				<input type="hidden" th:value="${poll.getPollId()}" name="pollId" />
+				<input type="submit" id=deleteButton onclick="myFunction()" value="ИЗТРИВАНЕ">
+			</form>
+			<br> <br>
+		</div>
+	</div>
+	<br>
+	<br>
+	<div class="footer">
+	<p> &copy 2021 bgizbori.com</p>
+	</div>
+</body>
+</html>

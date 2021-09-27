@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ <meta charset="utf-8" />    
+        <title>Freelancer - Start Bootstrap Theme</title>
+     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link
+	href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+        <link href="/style.css" rel="stylesheet" />
+<meta charset="ISO-8859-1">
+    <script type="text/javascript">
+        function disableBack() { window.history.forward(); }
+        setTimeout("disableBack()", 0);
+        window.onunload = function () { null };
+    </script>
+    <style>
+th, td {
+  border: 1px solid black;
+}
+
+table{
+  width: 100%;
+}
+td {
+ width: 50%;
+ border: 2px solid #00008b; 
+}
+</style>
+<title>OФИЦИАЛЕН САЙТ ЗА ГЛАСУВАНЕ НА РЕПУБЛИКА БЪЛГАРИЯ</title>
+</head>
+<body onload="if (document.referrer == '') self.location='/';">
+<div class="container">
+<div class="top-container">
+	<div style="text-align: left; position: static;"><img src="/images/euflag.png" width="100" /></div>
+	<div class="header-text">
+  <h1>ОФИЦИАЛЕН САЙТ ЗА ГЛАСУВАНЕ НА РЕПУБЛИКА БЪЛГАРИЯ</h1>
+</div>
+	<div style="text-align: left;"><img src="/images/gerb-bulgaria.png" width="120px" height="120px" /></div>
+</div>
+<div class="div-style">
+    <form class="list" action="#" th:action="@{/polls/sendVote}" method="post" th:object="${vote}" autocomplete="off" >
+     <input type="hidden" th:object="${user}" th:field="*{egn}" name="user.egn"> 
+   <br>
+				<p>
+					ВИД НА ИЗБОРИТЕ:<span th:text="${poll.getPollName()}"></span>
+				</p>
+				<br>
+				<p>
+					СЪЗДАТЕЛ НА ГЛАСУВАНЕТО:<span th:text="${poll.getPollOwner()}"></span>
+				</p>
+<br>
+      <p>ПАРТИЯ, КОАЛИЦИЯ, ИК</p>
+     <input type="hidden" th:field="*{pollId}" />
+    <table>
+    <tr th:each="pollOption, iterStat : ${poll.getPollOptions()}" >
+      <td><span  th:text="${pollOption.getOptionName()}" style="font-weight:bold"></span></td>
+      <td style="text-align:center">
+     <input type="radio" th:field="*{pollOptionId}" th:value="${pollOption.id}" required/></td>
+    </tr>
+  </tbody>
+</table>
+        <input type="submit" value="ГЛАСУВАЙ">    
+    </form>
+</div>
+</div>
+<div class="footer">
+	<p> &copy 2021 bgizbori.com</p>
+	</div>
+</body>
+</html>

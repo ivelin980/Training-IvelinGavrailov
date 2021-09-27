@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<head>
+<link
+	href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link
+	href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+ <meta charset="utf-8" />    
+        <title>OФИЦИАЛЕН САЙТ ЗА ГЛАСУВАНЕ НА РЕПУБЛИКА БЪЛГАРИЯ</title>
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="style.css" rel="stylesheet" />
+<meta charset="ISO-8859-1">
+  <script type="text/javascript">
+        function disableBack() { window.history.forward(); }
+        setTimeout("disableBack()", 0);
+        window.onunload = function () { null };
+        var timeleft = 10;
+        var voteTimer = setInterval(function(){
+          if(timeleft <= 0){
+            clearInterval(voteTimer);
+            var url = window.location.search;
+            url = url.replace("/login", ''); 
+        	location.replace(url+"/user/results");
+          } else {
+            document.getElementById("countdown").innerHTML = timeleft + " секунди";
+          }
+          timeleft -= 1;
+        }, 1000);
+    </script>
+<title>Spring Boot Form Demo</title>
+	<body>
+	<div class="top-container">
+	<div style="text-align: left; position: static;"><img src="/images/euflag.png" width="100" /></div>
+	<div class="header-text">
+  <h1>ОФИЦИАЛЕН САЙТ ЗА ГЛАСУВАНЕ НА РЕПУБЛИКА БЪЛГАРИЯ</h1>
+</div>
+	<div style="text-align: left;"><img src="/images/gerb-bulgaria.png" width="120px" height="120px" /></div>
+</div>
+	<div class="div-style">
+	<div class="list">
+	<p>ВЕЧЕ СТЕ ГЛАСУВАЛИ!</p>
+	<p>Можете да видите резултатите от вота в края на изборния ден, който е след: <span id="countdown"></span></p>
+	</div>
+	</div>
+	<div class="footer">
+	<p> &copy 2021 bgizbori.com</p>
+	</div>
+	</body>
+	
+</html>
