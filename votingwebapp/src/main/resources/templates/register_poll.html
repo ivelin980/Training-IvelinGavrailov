@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link
+	href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link
+	href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<style>
+.entry
+:not
+(:first-of-type )
+{
+margin-top:10px;
+}
+.glyphicon {
+	font-size: 18px;
+}
+</style>
+<meta charset="utf-8" />
+<title>OФИЦИАЛЕН САЙТ ЗА ГЛАСУВАНЕ НА РЕПУБЛИКА БЪЛГАРИЯ</title>
+<!-- Core theme CSS (includes Bootstrap)-->
+<link href="/style.css" rel="stylesheet" />
+<meta charset="ISO-8859-1">
+<title>Spring Boot Form Demo</title>
+<script>
+	submitForms = function() {
+		document.getElementById("form1").submit();
+		document.getElementById("form2").submit();
+	}
+	$(function() {
+		$(document)
+				.on(
+						'click',
+						'.btn-add',
+						function(e) {
+							e.preventDefault();
+
+							var controlForm = $('.controls form:first'), currentEntry = $(
+									this).parents('.entry:first'), newEntry = $(
+									currentEntry.clone()).appendTo(controlForm);
+
+							newEntry.find('input').val('');
+							controlForm
+									.find('.entry:not(:last) .btn-add')
+									.removeClass('btn-add')
+									.addClass('btn-remove')
+									.removeClass('btn-success')
+									.addClass('btn-danger')
+									.html(
+											'<span class="glyphicon glyphicon-minus"></span>');
+						}).on('click', '.btn-remove', function(e) {
+					$(this).parents('.entry:first').remove();
+
+					e.preventDefault();
+					return false;
+				});
+	});
+	
+	function preventBack() {
+		window.history.forward();
+	}
+	setTimeout("preventBack()", 0);
+	window.onunload = function() {
+		null
+	};
+</script>
+</head>
+<body onload="if (document.referrer == '') self.location='/';">
+		<div class="top-container">
+	<div style="text-align: left; position: static;"><img src="/images/euflag.png" width="100" /></div>
+	<div class="header-text">
+  <h1 style="color: #00008b; font-family: Lucida Console, Courier New, monospace">ОФИЦИАЛЕН САЙТ ЗА ГЛАСУВАНЕ НА РЕПУБЛИКА БЪЛГАРИЯ</h1>
+</div>
+	<div style="text-align: left;"><img src="/images/gerb-bulgaria.png" width="120px" height="120px" /></div>
+</div>
+		<div class="navbar">
+			<a href="/polls/list">ГЛАСУВАНИЯ</a> 
+					<a href="/admin/results">ВРЕМЕННИ РЕЗУЛТАТИ</a> 
+			<a class="active" href="/register">РЕГИСТРАЦИЯ НА ГЛАСУВАНЕ</a>
+		</div>
+		<br> <br>
+	<div class="container">
+		<div class="control-group" id="fields">
+			<div class="controls">
+				<div class="div-style">
+					<form id="form1" action="#" class="list" th:action="@{/register}"
+						method="post" th:object="${poll}" autocomplete="off">
+						<p>
+						ВИД НА ИЗБОРИТЕ:
+								<select name="pollName" required>
+								<option disabled selected > -- Изберете опция -- </option>
+								<option value="Парламентарни избори">Парламентарни избори</option>
+    							<option value="Местни избори">Местни избори</option>
+   								 <option value="Референдум">Референдум</option>
+   								 <option value="Избори за Европейски парламент">Избори за Европейски парламент</option>
+								</select>
+						</p>
+						<br />
+
+						<p>
+							СЪЗДАТЕЛ НА ГЛАСУВАНЕТО:<span><input type="text"
+								th:field="*{pollOwner}" oninput="setCustomValidity('')" required=""/></span>
+						</p>
+						<br />
+
+						<p>ПАРТИЯ, КОАЛИЦИЯ, ИК</p>
+						<div class="entry input-group col-xs-12">
+							<input class="form-control" name="pollOptions[]" type="text"
+								placeholder="ДОБАВИ ИЗБОР" required/> <span class="input-group-btn">
+								<button class="btn btn-success btn-add" style="color: blue"
+									type="button">
+									<span class="glyphicon glyphicon-plus"></span>
+								</button>
+							</span>
+						</div>
+					</form>
+					<input class="registerButton" type="submit" value="РЕГИСТРИРАЙ"
+						onclick="submitForms()" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+	<p> &copy 2021 bgizbori.com</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,398 @@
+.poll-name {
+	text-align: left;
+}
+
+.registerButton {
+	width: 100%;
+	background-color: #3498db;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.registerButton:hover {
+	width: 100%;
+	background-color: #00008d;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+marquee {
+	behavior: "slide";
+	direction: "left";
+	color: red;
+}
+
+.list input[type=text], select {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.list input[type=submit] {
+	width: 100%;
+	background-color: #3498db;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+#deleteButton {
+	width: 100%;
+	background-color: #df6363;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+#deleteButton:hover {
+	background-color: firebrick;
+}
+
+.list input[type=submit]:hover {
+	background-color: #00008b;
+}
+
+.div-style {
+	padding: 20px;
+	top: 50%;
+	left: 50%;
+	border-radius: 25px;
+	background: #f6fdfd;
+	border-image-slice: 1;
+	opacity: 0.86;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+.div-style:hover {
+	opacity: 1.0;
+}
+
+.poll-result-style {
+	padding: 20px;
+	top: 50%;
+	left: 50%;
+	border-radius: 25px;
+	background: #f6fdfd;
+	border-image-slice: 1;
+	border-width: 5px;
+	border-color: #00008b;
+	margin-top: 20px;
+}
+
+.list p {
+	color: #00008b;
+	font-size: 19px;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: "Lucida Console", "Courier New", monospace;
+	font-weight: bold;
+}
+
+.list span {
+	color: #00008b;
+	font-size: 19px;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: "Lucida Console", "Courier New", monospace;
+	font-weight: bold;
+}
+
+body {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background-image: url('/images/izbori-vot-bulgaria.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+}
+
+h1 {
+	text-shadow: 2px 1px;
+	color: #00008b;
+	font-family: Lucida Console, Courier New, monospace ";
+}
+
+.navbar {
+	width: 100%;
+	background-color: #ffffff;
+	overflow: auto;
+	border-image-slice: 1;
+	padding-top: 5px;
+}
+
+.navbar a {
+	float: left;
+	padding: 12px;
+	color: white;
+	text-decoration: none;
+	font-size: 17px;
+	width: 33%; /* Four links of equal widths */
+	text-align: center;
+	color: #00008b;
+}
+
+.navbar a:hover {
+	background-color: #e6eafe;
+	color: #00008b;
+}
+
+.navbar a.active {
+	background-color: #00008b;
+	color: #ffffff;
+}
+
+.top-container {
+	background-color: #f6fdfd;
+	background-image: linear-gradient(#e6eafe, #f5f9fe, #e6eafe);
+	padding: 10px;
+	border-image-slice: 1;
+	display: flex;
+	text-align: center;
+	justify-content: space-around;
+	align-items: center;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+.header-text {
+	display: flex;
+}
+
+.header-h1 {
+	justify-content: space-evenly;
+	align-items: center;
+	color: #00008b !important;
+	text-transform: uppercase;
+	font-family: "Lucida Console", "Courier New", monospace;
+	text-align: center;
+}
+
+.box p {
+	color: #3498db;
+	color: grey;
+	font-size: 21px;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: "Lucida Console", "Courier New", monospace;
+	font-weight: bold;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 21px;
+}
+
+.card {
+	margin-bottom: 20px;
+	border: none
+}
+
+.box {
+	opacity: 0.86;
+	width: 550px;
+	padding: 30px;
+	position: fixed;
+	top: 40%;
+	left: 50%;
+	background: #f6fdfd;
+	border-radius: 25px;
+	text-align: center;
+	transition: 0.25s;
+	margin-top: 100px;
+	transform: translate(-50%, -50%);
+}
+
+.box:hover {
+	opacity: 1.0;
+}
+
+.box input[type="text"] {
+	border: 0;
+	font-size: 18px;
+	font-weight: bold;
+	background: none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: 4px solid #3498db;
+	padding: 10px 10px;
+	width: 300px;
+	outline: none;
+	color: #00008b;
+	border-radius: 24px;
+	transition: 0.25s;
+}
+
+.box h1 {
+	color: #00008b;
+	text-transform: uppercase;
+	font-weight: 500;
+	font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.box input[type="text"]:focus {
+	width: 350px;
+	border-color: #00008b;
+}
+
+.box input[type="submit"] {
+	border: 0;
+	background: none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: 4px solid #3498db;
+	padding: 14px 40px;
+	outline: none;
+	color: grey;
+	border-radius: 24px;
+	transition: 0.25s;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.box input[type="submit"]:hover {
+	background: #00008b;
+	color: white;
+	border-color: #00008b;
+}
+
+.forgot {
+	text-decoration: underline
+}
+
+ul.social-network {
+	list-style: none;
+	display: inline;
+	margin-left: 0 !important;
+	padding: 0
+}
+
+ul.social-network li {
+	display: inline;
+	margin: 0 5px
+}
+
+.social-network a.icoFacebook:hover {
+	background-color: #3B5998
+}
+
+.social-network a.icoTwitter:hover {
+	background-color: #33ccff
+}
+
+.social-network a.icoGoogle:hover {
+	background-color: #BD3518
+}
+
+.social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,
+	.social-network a.icoGoogle:hover i {
+	color: #fff
+}
+
+a.socialIcon:hover, .socialHoverClass {
+	color: #44BCDD
+}
+
+.social-circle li a {
+	display: inline-block;
+	position: relative;
+	margin: 0 auto 0 auto;
+	border-radius: 50%;
+	text-align: center;
+	width: 50px;
+	height: 50px;
+	font-size: 20px
+}
+
+.social-circle li i {
+	margin: 0;
+	line-height: 50px;
+	text-align: center
+}
+
+.social-circle li a:hover i, .triggeredHover {
+	transform: rotate(360deg);
+	transition: all 0.2s
+}
+
+.social-circle i {
+	color: #fff;
+	transition: all 0.8s;
+	transition: all 0.8s
+}
+
+.form-table {
+	width: 500px;
+	padding: 40px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	background: #f6fdfd;
+	border-radius: 25px;
+	text-align: center;
+	transition: 0.25s;
+	margin-top: 100px;
+	transform: translate(-50%, -50%);
+}
+
+.form-table input[type=submit] {
+	width: 100%;
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.form-table input[type=submit]:hover {
+	background-color: #45a049;
+}
+
+.form-table div {
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
+}
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #00008b;
+	color: white;
+	text-align: center;
+	align-content: center;
+	height: 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	opacity: 0.6;
+}
+
+.footer:hover {
+	opacity: 1.0;
+}

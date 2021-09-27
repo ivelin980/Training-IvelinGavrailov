@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ <meta charset="utf-8" />    
+        <title>OФИЦИАЛЕН САЙТ ЗА ГЛАСУВАНЕ НА РЕПУБЛИКА БЪЛГАРИЯ</title>
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="style.css" rel="stylesheet" />
+       <script type = "text/javascript" >
+   function preventBack(){window.history.forward();}
+    setTimeout("preventBack()", 0);
+    window.onunload=function(){null};
+</script>
+        
+<meta charset="ISO-8859-1">
+<title>ОФИЦИАЛЕН САЙТ ЗА ГЛАСУВАНЕ НА РЕПУБЛИКА БЪЛГАРИЯ</title>
+</head>
+<body>
+	<div class="top-container">
+	<div style="text-align: left; position: static;"><img src="/images/euflag.png" width="100" /></div>
+	<div class="header-text">
+  <h1>ОФИЦИАЛЕН САЙТ ЗА ГЛАСУВАНЕ НА РЕПУБЛИКА БЪЛГАРИЯ</h1>
+</div>
+	<div style="text-align: left; position: static;"><img src="/images/gerb-bulgaria.png" width="120px" height="120px" /></div>
+</div>
+	<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card" >
+                <form action="#" th:action="@{/login}" method="post"
+			th:object="${user}" class="box" autocomplete="off">
+                    <h1>ВПИСВАНЕ НА ГЛАСОПОДАВАТЕЛЯ</h1>
+                    <p> Моля въведете ЕГН и ПИК</p> <input type="text" th:field="*{egn}" name="" placeholder="ЕГН"> <input type="text" name="" th:field="*{personalCode}" placeholder="ПИК"> <input type="submit" name="" value="ВПИСВАНЕ">
+                    <div class="col-md-12">
+                     <p style="color:red">ГРЕШЕН ЕГН/ПИК</p>
+                    </div>
+                     </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+	<p> &copy 2021 bgizbori.com</p>
+	</div>
+</body>
+</html>
